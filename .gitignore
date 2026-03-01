@@ -1,0 +1,56 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data directories (videos y features ocupan mucho espacio)
+data/raw/
+data/processed_frames/
+data/features/
+/archive
+
+# Model checkpoints
+models/checkpoints/*.pth
+models/checkpoints/*.pt
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+
+
+/secret
+
+
+./*md
+
+test_preprocess.py
+test_frames_17097.npy
