@@ -10,7 +10,7 @@ Notas importantes:
 import json
 import os
 from typing import Dict, List, Optional, Any
-
+import mediapipe as mp
 
 def normalize_video_id(video_id: Any) -> str:
     """
