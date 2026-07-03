@@ -141,8 +141,8 @@ def process_dataset(wlasl_json_path: str, nslt_json_path: str, videos_dir: str, 
     for video_id in tqdm(nslt_data.keys()):
         try:
             video_info = get_video_info(video_id, wlasl_data, nslt_data)
-            video_path = os.path.join(videos_dir, f"{video_id}.mp4")
-            
+            subset_folder  = video_info['subset']
+            video_path = os.path.join(videos_dir, subset_folder, f"{video_id}.mp4")            
             if not os.path.exists(video_path):
                 raise FileNotFoundError(f"Video not found: {video_id}")
             
