@@ -1,0 +1,35 @@
+name: kophos
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python estable para ML
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+
+  # Data Science core
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - pillow
+  - joblib
+  - tqdm
+
+  # Computer Vision
+  - opencv
+
+  # Utilities
+  - packaging
+
+  # Pip-only / mejor resolución por plataforma
+  - pip:
+      - mediapipe==0.10.32
+      - sounddevice
+      - torch
+      - torchvision
+      - sympy
