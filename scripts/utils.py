@@ -737,3 +737,161 @@ def debug_video_extraction(
 
 
 
+def extract_landmarks_from_results(results):
+    pose = np.zeros(33 * 3, dtype=np.float32)
+    left_hand = np.zeros(21 * 3, dtype=np.float32)
+    right_hand = np.zeros(21 * 3, dtype=np.float32)
+
+    if results.pose_landmarks:
+        pose = np.array(
+            [[lm.x, lm.y, lm.z] for lm in results.pose_landmarks.landmark],
+            dtype=np.float32
+        ).flatten()
+
+    if results.left_hand_landmarks:
+        left_hand = np.array(
+            [[lm.x, lm.y, lm.z] for lm in results.left_hand_landmarks.landmark],
+            dtype=np.float32
+        ).flatten()
+
+    if results.right_hand_landmarks:
+        right_hand = np.array(
+            [[lm.x, lm.y, lm.z] for lm in results.right_hand_landmarks.landmark],
+            dtype=np.float32
+        ).flatten()
+
+    features = np.concatenate([pose, left_hand, right_hand])
+
+    return features
+
+
+def debug_mediapipe_extraction(
+    wlasl_data,
+    nslt_data,
+    videos_dir,
+    num_videos=5,
+    num_frames_per_video=3
+):
+    print("=" * 80)
+    print("DEBUG MEDIAPIPE EXTRACTION")
+    print("=" * 80)
+
+    video_index = build_wlasl_video_index(wlasl_data)
+    mp_holistic = mp.solutions.holistic
+
+    tested_videos = 0
+
+    with mp_holistic.Holistic(
+        static_image_mode=False,
+        model_complexity=1,
+        smooth_landmarks=True,
+        enable_segmentation=False,
+        min_detection_confidence=0.5,
+        min_tracking_confidence=0.5
+    ) as holistic:
+
+        for video_id, nslt_info in nslt_data.items():
+            video_id = normalize_video_id(video_id)
+            subset = nslt_info["subset"]
+
+            video_path = find_video_path(
+                videos_dir=videos_dir,
+                video_id=video_id,
+                subset=subset
+            )
+
+            # Saltar videos faltantes
+            if video_path is None:
+                continue
+
+            if video_id not in video_index:
+                continue
+
+            print("\n" + "=" * 80)
+            print("VIDEO ID:", video_id)
+            print("subset:", subset)
+            print("video_path:", video_path)
+
+            bbox = video_index[video_id]["instance"]["bbox"]
+            gloss = video_index[video_id]["gloss"]
+
+            frame_start = nslt_info["action"][1]
+            frame_end = nslt_info["action"][2]
+
+            print("gloss:", gloss)
+            print("bbox:", bbox)
+            print("frame_start:", frame_start)
+            print("frame_end:", frame_end)
+
+            cap = cv2.VideoCapture(video_path)
+
+            if not cap.isOpened():
+                print("[ERROR] OpenCV no pudo abrir el video")
+                cap.release()
+                continue
+
+            total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+            if frame_start < 1:
+                frame_start = 1
+
+            if frame_end == -1 or frame_end > total_frames:
+                frame_end = total_frames
+
+            if frame_start >= frame_end:
+                print("[ERROR] Rango de frames inválido")
+                cap.release()
+                continue
+
+            test_frame_indices = np.linspace(
+                frame_start,
+                frame_end - 1,
+                num_frames_per_video
+            ).astype(int)
+
+            for frame_idx in test_frame_indices:
+                print("\n--- FRAME:", frame_idx, "---")
+
+                cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx - 1)
+                ret, frame = cap.read()
+
+                if not ret or frame is None:
+                    print("[ERROR] No se pudo leer frame")
+                    continue
+
+                crop, crop_status = safe_crop(frame, bbox)
+
+                print("frame.shape:", frame.shape)
+                print("crop_status:", crop_status)
+                print("crop.shape:", crop.shape)
+
+                crop_rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
+
+                try:
+                    results = holistic.process(crop_rgb)
+
+                    features = extract_landmarks_from_results(results)
+
+                    print("pose detected:", results.pose_landmarks is not None)
+                    print("left hand detected:", results.left_hand_landmarks is not None)
+                    print("right hand detected:", results.right_hand_landmarks is not None)
+                    print("features.shape:", features.shape)
+
+                    if features.shape == (225,):
+                        print("[OK] Feature vector correcto")
+                    else:
+                        print("[ERROR] Feature vector incorrecto")
+
+                except Exception as e:
+                    print("[ERROR MEDIAPIPE]", repr(e))
+
+            cap.release()
+
+            tested_videos += 1
+
+            if tested_videos >= num_videos:
+                break
+
+    print("\n" + "=" * 80)
+    print("DEBUG MEDIAPIPE FINALIZADO")
+    print("=" * 80)
