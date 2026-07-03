@@ -1,202 +1,281 @@
 """
-ASL Video Preprocessing Script (MediaPipe Edition)
-- Metadata loading
-- Largest Bounding Box cropping (No Resizing)
-- Temporal sampling (30 frames)
-- Spatial Feature Extraction with MediaPipe Holistic
+Utilidades para cargar y manipular los metadatos de WLASL y NSLT-100.
+
+Notas importantes:
+- En WLASL, bbox viene en formato [x_min, y_min, x_max, y_max].
+- En NSLT, action viene en formato [class_id, frame_start, frame_end].
+- Los video_id deben mantenerse como string con ceros iniciales.
 """
 
+import json
 import os
-import cv2
+from typing import Dict, List, Optional, Any
 import numpy as np
-from typing import List, Tuple
-from tqdm import tqdm
-import mediapipe as mp
 
-import torch
-import torch.nn as nn
 
-# Ensure you have these functions defined in your utils.py
-from utils import (
-    load_wlasl_metadata,
-    load_nslt_subset,
-    get_video_info,
-    print_dataset_stats
-)
+def normalize_video_id(video_id: Any) -> str:
+    return str(video_id).zfill(5)
 
-class VideoPreprocessor:
-    """
-    Class to preprocess ASL videos following this pipeline:
-    1. Load video frames.
-    2. Apply bounding box (crop) to isolate signer.
-    3. Temporal sampling to exactly 30 frames.
-    """
-    
-    def __init__(self, target_frames: int = 30):
-        self.target_frames = target_frames
-    
-    def load_video(self, video_path: str) -> List[np.ndarray]:
-        if not os.path.exists(video_path):
-            raise FileNotFoundError(f"Video not found: {video_path}")
-        
-        cap = cv2.VideoCapture(video_path)
-        frames = []
-        
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
-            # Convert BGR to RGB for MediaPipe
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frames.append(frame)
-        
-        cap.release()
-        return frames
-    
-    def crop_frame(self, frame: np.ndarray, bbox: List[int]) -> np.ndarray:
-        ymin, xmin, ymax, xmax = bbox
-        h, w = frame.shape[:2]
-        
-        ymin = max(0, min(ymin, h))
-        ymax = max(0, min(ymax, h))
-        xmin = max(0, min(xmin, w))
-        xmax = max(0, min(xmax, w))
-        
-        return frame[ymin:ymax, xmin:xmax]
-    
-    def temporal_sampling(self, frames: List[np.ndarray]) -> List[np.ndarray]:
-        num_frames = len(frames)
-        
-        if num_frames == 0:
-            return []
-            
-        if num_frames == self.target_frames:
-            return frames
-        elif num_frames > self.target_frames:
-            indices = np.linspace(0, num_frames - 1, self.target_frames, dtype=int)
-            return [frames[i] for i in indices]
-        else:
-            padded_frames = frames.copy()
-            last_frame = frames[-1]
-            for _ in range(self.target_frames - num_frames):
-                padded_frames.append(last_frame.copy())
-            return padded_frames
-    
-    def preprocess_video(self, video_path: str, bbox: List[int]) -> List[np.ndarray]:
-        frames = self.load_video(video_path)
-        
-        if not frames:
-            raise ValueError(f"Could not load frames from: {video_path}")
-        
-        # Crop frames without resizing to maintain aspect ratio for MediaPipe
-        cropped_frames = [self.crop_frame(frame, bbox) for frame in frames]
-        return self.temporal_sampling(cropped_frames)
 
-class MediaPipeExtractor:
-    """
-    Feature Extractor using MediaPipe Holistic
-    """
-    def __init__(self):
-        self.holistic = mp.solutions.holistic.Holistic(
-            static_image_mode=False,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5
-        )
-        
-    def extract_features(self, video_frames: List[np.ndarray]) -> np.ndarray:
-        features = []
-        
-        for frame in video_frames:
-            # Optimize performance by marking image as not writeable
-            frame.flags.writeable = False
-            results = self.holistic.process(frame)
-            
-            # Pose: 33 points * 3 (x,y,z) = 99
-            pose = np.array([[res.x, res.y, res.z] for res in results.pose_landmarks.landmark]).flatten() if results.pose_landmarks else np.zeros(99)
-            # Left Hand: 21 points * 3 = 63
-            lh = np.array([[res.x, res.y, res.z] for res in results.left_hand_landmarks.landmark]).flatten() if results.left_hand_landmarks else np.zeros(63)
-            # Right Hand: 21 points * 3 = 63
-            rh = np.array([[res.x, res.y, res.z] for res in results.right_hand_landmarks.landmark]).flatten() if results.right_hand_landmarks else np.zeros(63)
-            
-            frame_features = np.concatenate([pose, lh, rh])
-            features.append(frame_features)
-            
-        return np.array(features) # Shape: (30, 225)
+def load_wlasl_metadata(json_path: str) -> List[Dict]:
+    with open(json_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-def process_dataset(wlasl_json_path: str, nslt_json_path: str, videos_dir: str, output_dir: str):
-    features_dir = os.path.join(output_dir, 'features_mp')
-    os.makedirs(features_dir, exist_ok=True)
-    
-    print("Loading metadata...")
-    wlasl_data = load_wlasl_metadata(wlasl_json_path)
-    nslt_data = load_nslt_subset(nslt_json_path)
-    
-    preprocessor = VideoPreprocessor(target_frames=30)
-    extractor = MediaPipeExtractor()
-    
-    processed_count = 0
-    error_count = 0
-    error_log = []
-    
-    for video_id in tqdm(nslt_data.keys()):
-        try:
-            video_info = get_video_info(video_id, wlasl_data, nslt_data)
-            subset_folder  = video_info['subset']
-            video_path = os.path.join(videos_dir, subset_folder, f"{video_id}.mp4")            
-            if not os.path.exists(video_path):
-                raise FileNotFoundError(f"Video not found: {video_id}")
-            
-            # 1. Preprocess (Crop & Temporal Sample)
-            processed_frames = preprocessor.preprocess_video(video_path, video_info['bbox'])
-            
-            # 2. Extract Features with MediaPipe
-            features = extractor.extract_features(processed_frames)
-            
-            # 3. Save feature tensor and metadata
-            output_data = {
-                'features': features,
-                'video_id': video_id,
-                'action_label': video_info['action_label'],
-                'subset': video_info['subset'],
-                'gloss': video_info['gloss']
+
+def load_nslt_subset(json_path: str) -> Dict:
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return {
+        normalize_video_id(video_id): info
+        for video_id, info in data.items()
+    }
+
+
+def build_wlasl_video_index(wlasl_data: List[Dict]) -> Dict[str, Dict]:
+    video_index = {}
+
+    for gloss_entry in wlasl_data:
+        gloss_name = gloss_entry.get("gloss")
+
+        for instance in gloss_entry.get("instances", []):
+            video_id = normalize_video_id(instance.get("video_id"))
+
+            video_index[video_id] = {
+                "gloss": gloss_name,
+                "instance": instance
             }
-            
-            np.save(os.path.join(features_dir, f"{video_id}.npy"), output_data)
-            processed_count += 1
-            
+
+    return video_index
+
+
+def is_valid_bbox(bbox: Optional[List[int]]) -> bool:
+    if bbox is None:
+        return False
+
+    if not isinstance(bbox, list):
+        return False
+
+    if len(bbox) != 4:
+        return False
+
+    x_min, y_min, x_max, y_max = bbox
+
+    return (x_max - x_min) > 0 and (y_max - y_min) > 0
+
+
+def get_video_info(
+    video_id: str,
+    wlasl_data: List[Dict],
+    nslt_data: Dict
+) -> Dict:
+    video_id = normalize_video_id(video_id)
+
+    if video_id not in nslt_data:
+        raise ValueError(f"Video ID {video_id} no encontrado en NSLT-100")
+
+    nslt_info = nslt_data[video_id]
+
+    if "action" not in nslt_info or len(nslt_info["action"]) < 3:
+        raise ValueError(f"Formato inválido de action para video ID {video_id}")
+
+    action_label = nslt_info["action"][0]
+    frame_start = nslt_info["action"][1]
+    frame_end = nslt_info["action"][2]
+    subset = nslt_info["subset"]
+
+    video_index = build_wlasl_video_index(wlasl_data)
+
+    if video_id not in video_index:
+        raise ValueError(f"Video ID {video_id} no encontrado en WLASL")
+
+    video_instance = video_index[video_id]["instance"]
+    gloss_name = video_index[video_id]["gloss"]
+
+    bbox = video_instance.get("bbox")
+
+    if not is_valid_bbox(bbox):
+        raise ValueError(f"BBox inválido para video ID {video_id}: {bbox}")
+
+    return {
+        "video_id": video_id,
+        "gloss": gloss_name,
+        "action_label": action_label,
+        "subset": subset,
+        "bbox": bbox,
+        "fps": video_instance.get("fps"),
+        "frame_start": frame_start,
+        "frame_end": frame_end,
+        "url": video_instance.get("url"),
+        "signer_id": video_instance.get("signer_id"),
+        "source": video_instance.get("source"),
+    }
+
+
+def find_video_path(
+    videos_dir: str,
+    video_id: str,
+    subset: str
+) -> Optional[str]:
+    video_id = normalize_video_id(video_id)
+
+    video_path = os.path.join(
+        videos_dir,
+        subset,
+        f"{video_id}.mp4"
+    )
+
+    if os.path.exists(video_path):
+        return video_path
+
+    return None
+
+
+def safe_crop(
+    frame: np.ndarray,
+    bbox: List[int],
+    padding: float = 0.15
+):
+    h, w = frame.shape[:2]
+
+    if bbox is None or len(bbox) != 4:
+        return frame, "invalid_bbox_format"
+
+    x_min, y_min, x_max, y_max = bbox
+
+    box_width = x_max - x_min
+    box_height = y_max - y_min
+
+    if box_width <= 0 or box_height <= 0:
+        return frame, "invalid_bbox_size"
+
+    pad_x = int(box_width * padding)
+    pad_y = int(box_height * padding)
+
+    x_min = max(0, int(x_min - pad_x))
+    y_min = max(0, int(y_min - pad_y))
+    x_max = min(w, int(x_max + pad_x))
+    y_max = min(h, int(y_max + pad_y))
+
+    if x_max <= x_min or y_max <= y_min:
+        return frame, "invalid_bbox_after_clamp"
+
+    crop = frame[y_min:y_max, x_min:x_max]
+
+    if crop is None or crop.size == 0:
+        return frame, "empty_crop"
+
+    return crop, "ok"
+
+
+def get_class_distribution(nslt_data: Dict) -> Dict:
+    distribution = {
+        "train": {},
+        "val": {},
+        "test": {}
+    }
+
+    for _, info in nslt_data.items():
+        subset = info["subset"]
+        action_label = info["action"][0]
+
+        if subset not in distribution:
+            distribution[subset] = {}
+
+        if action_label not in distribution[subset]:
+            distribution[subset][action_label] = 0
+
+        distribution[subset][action_label] += 1
+
+    return distribution
+
+
+def print_dataset_stats(nslt_data: Dict) -> None:
+    dist = get_class_distribution(nslt_data)
+
+    print("=" * 60)
+    print("ESTADÍSTICAS DEL DATASET NSLT-100")
+    print("=" * 60)
+
+    total_dataset_videos = 0
+
+    for subset in ["train", "val", "test"]:
+        total_videos = sum(dist.get(subset, {}).values())
+        num_classes = len(dist.get(subset, {}))
+        total_dataset_videos += total_videos
+
+        print(f"\n{subset.upper()}:")
+        print(f"  Total de videos: {total_videos}")
+        print(f"  Número de clases: {num_classes}")
+
+        if total_videos > 0 and num_classes > 0:
+            print(f"  Videos por clase promedio: {total_videos / num_classes:.2f}")
+
+    print(f"\nTOTAL DATASET: {total_dataset_videos} videos")
+    print("=" * 60)
+
+
+def validate_metadata_alignment(
+    wlasl_data: List[Dict],
+    nslt_data: Dict
+) -> Dict:
+    video_index = build_wlasl_video_index(wlasl_data)
+
+    nslt_ids = set(normalize_video_id(video_id) for video_id in nslt_data.keys())
+    wlasl_ids = set(video_index.keys())
+
+    missing_in_wlasl = sorted(list(nslt_ids - wlasl_ids))
+    found = sorted(list(nslt_ids & wlasl_ids))
+
+    return {
+        "total_nslt": len(nslt_ids),
+        "found_in_wlasl": len(found),
+        "missing_in_wlasl": len(missing_in_wlasl),
+        "missing_ids": missing_in_wlasl,
+    }
+
+
+def print_metadata_alignment_report(
+    wlasl_data: List[Dict],
+    nslt_data: Dict
+) -> None:
+    report = validate_metadata_alignment(wlasl_data, nslt_data)
+
+    print("=" * 60)
+    print("VALIDACIÓN NSLT-100 vs WLASL")
+    print("=" * 60)
+    print(f"Total videos en NSLT: {report['total_nslt']}")
+    print(f"Encontrados en WLASL: {report['found_in_wlasl']}")
+    print(f"No encontrados en WLASL: {report['missing_in_wlasl']}")
+
+    if report["missing_ids"]:
+        print("\nPrimeros IDs faltantes:")
+        print(report["missing_ids"][:20])
+
+    print("=" * 60)
+
+
+def create_metadata_list(
+    wlasl_data: List[Dict],
+    nslt_data: Dict,
+    videos_dir: Optional[str] = None
+) -> List[Dict]:
+    metadata = []
+
+    for video_id in nslt_data.keys():
+        try:
+            info = get_video_info(video_id, wlasl_data, nslt_data)
+
+            if videos_dir is not None:
+                info["video_path"] = find_video_path(
+                    videos_dir=videos_dir,
+                    video_id=info["video_id"],
+                    subset=info["subset"]
+                )
+
+            metadata.append(info)
+
         except Exception as e:
-            error_log.append(f"Error processing {video_id}: {str(e)}")
-            error_count += 1
-            
-    print(f"\nProcessing Complete. Success: {processed_count}, Errors: {error_count}")
+            print(f"[ERROR METADATA] video_id={video_id}: {e}")
 
-class BiLSTMSignModel(nn.Module):
-    def __init__(self, input_size=225, hidden_size=256, num_layers=2, num_classes=100):
-        super(BiLSTMSignModel, self).__init__()
-        
-        # input_size modified to 225 to match MediaPipe extraction (Pose + Left Hand + Right Hand)
-        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, 
-                            batch_first=True, bidirectional=True, dropout=0.3)
-        
-        self.fc = nn.Sequential(
-            nn.Linear(hidden_size * 2, 128),
-            nn.ReLU(),
-            nn.Dropout(0.3),
-            nn.Linear(128, num_classes)
-        )
-
-    def forward(self, x):
-        out, _ = self.lstm(x)
-        out = out[:, -1, :]
-        return self.fc(out)
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description='Preprocesar videos de ASL con MediaPipe')
-    parser.add_argument('--wlasl_json', type=str, required=True)
-    parser.add_argument('--nslt_json', type=str, required=True)
-    parser.add_argument('--videos_dir', type=str, required=True)
-    parser.add_argument('--output_dir', type=str, required=True)
-    args = parser.parse_args()
-    
-    process_dataset(args.wlasl_json, args.nslt_json, args.videos_dir, args.output_dir)
+    return metadata
