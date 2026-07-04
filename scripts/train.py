@@ -1,16 +1,21 @@
 """
 Training Loop for ASL Recognition BiLSTM Model
-Orchestrates data loading, forward/backward passes, and model checkpointing.
+Orchestrates data loading, model checkpointing, and CSV logging.
 """
 
 import os
+import sys
 import argparse
+import csv
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 
-# Import your custom modules
+# Parche de rutas: Obliga a Python a buscar en el mismo directorio de este script
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Ahora las importaciones funcionarán sin problema
 from dataset import get_dataloaders
 from model import BiLSTMSignModel
 
@@ -21,90 +26,71 @@ def train_model(
     batch_size: int = 32,
     learning_rate: float = 0.001
 ):
-    """
-    Main training function.
-    """
-    # 1. Setup Device (Use GPU if available, otherwise CPU)
+    # 1. Configuración de Dispositivo
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"🚀 Starting training on device: {device}")
+    print(f"🚀 Iniciando entrenamiento en: {device}")
 
-    # Ensure output directory exists for saving weights
     os.makedirs(output_dir, exist_ok=True)
     best_model_path = os.path.join(output_dir, "best_bilstm_model.pth")
+    log_file_path = os.path.join(output_dir, "training_log.csv")
 
-    # 2. Load Data
-    print("\n📦 Loading DataLoaders...")
+    # Inicializar archivo de log
+    with open(log_file_path, mode='w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(["Epoch", "Train_Loss", "Train_Acc", "Val_Loss", "Val_Acc"])
+
+    # 2. Cargar Datos
+    print("\n📦 Cargando DataLoaders...")
     dataloaders = get_dataloaders(metadata_csv=csv_path, batch_size=batch_size)
     train_loader = dataloaders["train"]
     val_loader = dataloaders["val"]
 
-    # 3. Initialize Model
-    # NSLT-100 has 100 classes. Feature dim is 225 from MediaPipe.
-    print("🧠 Initializing BiLSTM Model...")
+    # 3. Inicializar Modelo (225 features de MediaPipe, 100 clases de NSLT)
+    print("🧠 Inicializando Modelo BiLSTM...")
     model = BiLSTMSignModel(input_dim=225, hidden_dim=128, num_classes=100)
     model = model.to(device)
 
-    # 4. Define Loss Function and Optimizer
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     best_val_accuracy = 0.0
 
-    # 5. Training Loop
-    print("\n🔥 Starting Training Loop...")
+    # 4. Bucle de Entrenamiento
+    print("\n🔥 Comenzando Entrenamiento...")
     for epoch in range(1, epochs + 1):
         print(f"\n--- Epoch {epoch}/{epochs} ---")
         
-        # ==========================================
-        # TRAINING PHASE
-        # ==========================================
-        model.train()  # Set model to training mode (enables Dropout)
-        train_loss = 0.0
-        train_correct = 0
-        train_total = 0
+        # --- FASE DE ENTRENAMIENTO ---
+        model.train()
+        train_loss, train_correct, train_total = 0.0, 0, 0
 
-        # Progress bar for training
-        train_loop = tqdm(train_loader, desc="Training", leave=False)
-        
+        train_loop = tqdm(train_loader, desc="Entrenando", leave=False)
         for features, labels in train_loop:
-            # Move data to the active device (GPU/CPU)
             features, labels = features.to(device), labels.to(device)
 
-            # Zero the parameter gradients
             optimizer.zero_grad()
-
-            # Forward pass
             outputs = model(features)
             loss = criterion(outputs, labels)
-
-            # Backward pass and optimize
+            
             loss.backward()
             optimizer.step()
 
-            # Calculate statistics
             train_loss += loss.item() * features.size(0)
             _, predicted = torch.max(outputs.data, 1)
             train_total += labels.size(0)
             train_correct += (predicted == labels).sum().item()
 
-            # Update progress bar description
             train_loop.set_postfix(loss=loss.item())
 
         epoch_train_loss = train_loss / train_total
         epoch_train_acc = (train_correct / train_total) * 100
 
-        # ==========================================
-        # VALIDATION PHASE
-        # ==========================================
-        model.eval()  # Set model to evaluation mode (disables Dropout)
-        val_loss = 0.0
-        val_correct = 0
-        val_total = 0
+        # --- FASE DE VALIDACIÓN ---
+        model.eval()
+        val_loss, val_correct, val_total = 0.0, 0, 0
 
-        # Disable gradient calculation for validation to save memory and compute
         with torch.no_grad():
-            val_loop = tqdm(val_loader, desc="Validation", leave=False)
-            
+            val_loop = tqdm(val_loader, desc="Validando", leave=False)
             for features, labels in val_loop:
                 features, labels = features.to(device), labels.to(device)
 
@@ -119,18 +105,18 @@ def train_model(
         epoch_val_loss = val_loss / val_total
         epoch_val_acc = (val_correct / val_total) * 100
 
-        # Print Epoch Summary
         print(f"Train Loss: {epoch_train_loss:.4f} | Train Acc: {epoch_train_acc:.2f}%")
         print(f"Val Loss:   {epoch_val_loss:.4f} | Val Acc:   {epoch_val_acc:.2f}%")
 
-        # ==========================================
-        # SAVE CHECKPOINT (Best Model)
-        # ==========================================
+        # --- ESCRIBIR EN EL LOG CSV ---
+        with open(log_file_path, mode='a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([epoch, epoch_train_loss, epoch_train_acc, epoch_val_loss, epoch_val_acc])
+
+        # --- GUARDAR MEJOR MODELO ---
         if epoch_val_acc > best_val_accuracy:
-            print(f"⭐ Validation accuracy improved from {best_val_accuracy:.2f}% to {epoch_val_acc:.2f}%. Saving model...")
+            print(f"⭐ Precisión mejoró de {best_val_accuracy:.2f}% a {epoch_val_acc:.2f}%. Guardando modelo...")
             best_val_accuracy = epoch_val_acc
-            
-            # Save the model's weights (state_dict)
             torch.save({
                 'epoch': epoch,
                 'model_state_dict': model.state_dict(),
@@ -138,24 +124,16 @@ def train_model(
                 'val_accuracy': best_val_accuracy,
             }, best_model_path)
 
-    print(f"\n🎉 Training Complete! Best Validation Accuracy: {best_val_accuracy:.2f}%")
-    print(f"💾 Model saved to: {best_model_path}")
+    print(f"\n🎉 ¡Entrenamiento Completo! Mejor Accuracy: {best_val_accuracy:.2f}%")
+    print(f"💾 Modelo y logs guardados en: {output_dir}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Train BiLSTM for ASL Recognition")
-    
-    parser.add_argument("--csv_path", type=str, required=True, help="Path to metadata_mp.csv")
-    parser.add_argument("--output_dir", type=str, default="./checkpoints", help="Directory to save model weights")
-    parser.add_argument("--epochs", type=int, default=50, help="Number of training epochs")
-    parser.add_argument("--batch_size", type=int, default=32, help="Batch size for DataLoaders")
-    parser.add_argument("--lr", type=float, default=0.001, help="Learning rate for Adam optimizer")
-    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--csv_path", type=str, required=True)
+    parser.add_argument("--output_dir", type=str, required=True)
+    parser.add_argument("--epochs", type=int, default=50)
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--lr", type=float, default=0.001)
     args = parser.parse_args()
     
-    train_model(
-        csv_path=args.csv_path,
-        output_dir=args.output_dir,
-        epochs=args.epochs,
-        batch_size=args.batch_size,
-        learning_rate=args.lr
-    )
+    train_model(args.csv_path, args.output_dir, args.epochs, args.batch_size, args.lr)
