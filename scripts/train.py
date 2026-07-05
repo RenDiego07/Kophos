@@ -13,6 +13,7 @@ import torch.optim as optim
 from tqdm import tqdm
 
 # Parche de rutas: Obliga a Python a buscar en el mismo directorio de este script
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Ahora las importaciones funcionarán sin problema
