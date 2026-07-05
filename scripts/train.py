@@ -24,7 +24,8 @@ def train_model(
     output_dir: str,
     epochs: int = 50,
     batch_size: int = 32,
-    learning_rate: float = 0.001
+    learning_rate: float = 0.001,
+    num_classes: int = 5  # <-- Nuevo parámetro con valor por defecto de 5
 ):
     # 1. Configuración de Dispositivo
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -45,9 +46,9 @@ def train_model(
     train_loader = dataloaders["train"]
     val_loader = dataloaders["val"]
 
-    # 3. Inicializar Modelo (225 features de MediaPipe, 100 clases de NSLT)
-    print("🧠 Inicializando Modelo BiLSTM...")
-    model = BiLSTMSignModel(input_dim=225, hidden_dim=128, num_classes=100)
+    # 3. Inicializar Modelo dinámico
+    print(f"🧠 Inicializando Modelo BiLSTM para {num_classes} clases...")
+    model = BiLSTMSignModel(input_dim=225, hidden_dim=128, num_classes=num_classes) # <-- Dinámico
     model = model.to(device)
 
     criterion = nn.CrossEntropyLoss()
@@ -134,6 +135,14 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=50)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=0.001)
+    parser.add_argument("--num_classes", type=int, default=5) # <-- Nuevo argumento CLI
     args = parser.parse_args()
     
-    train_model(args.csv_path, args.output_dir, args.epochs, args.batch_size, args.lr)
+    train_model(
+        args.csv_path, 
+        args.output_dir, 
+        args.epochs, 
+        args.batch_size, 
+        args.lr,
+        args.num_classes
+    )
