@@ -10,7 +10,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 # Parche para importar desde el directorio raíz si estás en /scripts
 
-from scripts.model import BiLSTMSignModel
+from model import BiLSTMSignModel
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -22,7 +22,7 @@ app.add_middleware(
 
     allow_origins=["*"],  # para pruebas rápidas
 
-    allow_credentials=True,
+    allow_credentials=False,
 
     allow_methods=["*"],
 
