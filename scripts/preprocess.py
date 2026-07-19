@@ -156,7 +156,13 @@ def process_dataset(nslt_json_path: str, videos_dir: str, output_dir: str, limit
                 continue
 
         # Invertimos el mapeo para guardar la palabra (gloss) en el CSV por si quieres debuggear luego
-        reverse_map = {0: "HOSPITAL", 1: "LAUGH", 2: "MAKE", 3: "ME", 4: "NEED"}
+        # Invertimos el mapeo actualizado de 16 clases para el archivo de metadatos
+        reverse_map = {
+            0: "HOSPITAL", 1: "LAUGH", 2: "MAKE", 3: "ME", 4: "NEED",
+            5: "READ", 6: "SHOW", 7: "START", 8: "STOP", 9: "TELL",
+            10: "THINK", 11: "TO", 12: "UNDERSTAND", 13: "WAIT", 14: "WANT",
+            15: "WRITE"
+        }
         
         metadata_rows.append({
             "video_id": video_id,
