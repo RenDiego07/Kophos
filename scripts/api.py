@@ -31,8 +31,8 @@ app.add_middleware(
 )
 
 # 1. Configuración de Parámetros Globales
-MODEL_PATH = "/Users/dfflores/Downloads/best_bilstm_model.pth" # Ajusta tu ruta
-CLASSES = ["HOSPITAL", "LAUGH", "MAKE", "ME", "NEED"]
+MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "best_bilstm_model-2.pth")
+CLASSES = ["HOSPITAL", "LAUGH", "MAKE", "ME", "NEED", "READ", "SHOW", "START", "STOP", "TELL", "THINK", "TO", "UNDERSTAND", "WAIT", "WANT", "WRITE"]
 SEQUENCE_LENGTH = 30
 FEATURE_DIM = 225
 
@@ -40,7 +40,7 @@ FEATURE_DIM = 225
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Cargando modelo en: {device}")
 
-model = BiLSTMSignModel(input_dim=FEATURE_DIM, hidden_dim=128, num_classes=5)
+model = BiLSTMSignModel(input_dim=FEATURE_DIM, hidden_dim=128, num_classes=len(CLASSES))
 checkpoint = torch.load(MODEL_PATH, map_location=device)
 model.load_state_dict(checkpoint['model_state_dict'])
 model.to(device)
@@ -79,7 +79,8 @@ async def predict_sign(video: UploadFile = File(...)):
     Recibe un archivo de video, extrae los landmarks y devuelve la predicción.
     """
     # Guardar el video temporalmente para que OpenCV pueda leerlo
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as temp_video:
+    suffix = ".webm" if video.content_type == "video/webm" else ".mp4"
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp_video:
         temp_video.write(await video.read())
         temp_video_path = temp_video.name
 
