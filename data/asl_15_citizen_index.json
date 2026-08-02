@@ -1,3770 +1,7538 @@
 {
-    "5892698339580624-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "43142287081368647-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "9571221473356939-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "28791918942913153-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "5851960225980641-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "16499691175444786-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "8842873768781858-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "3284942530084891-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "3759922548209751-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "5903218158401913-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "2816314098780288-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "8311298382278862-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "5986181755240401-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "4315957172962892-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "997878459075781-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "7710150320331248-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "08795608187591553-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "513048409174413-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "8877316023603796-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "2657292811841865-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "13051783303937703-HOSPITAL": {
-        "subset": "train",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "8512749353267319-HOSPITAL": {
-        "subset": "val",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "0391236078587216-HOSPITAL": {
-        "subset": "val",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "35176220038590755-HOSPITAL": {
-        "subset": "val",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "9543121609158431-HOSPITAL": {
-        "subset": "val",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "29975883523571745-HOSPITAL": {
-        "subset": "test",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "2305871847828358-HOSPITAL": {
-        "subset": "test",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "03617049378353854-HOSPITAL": {
-        "subset": "test",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "7921373203371331-HOSPITAL": {
-        "subset": "test",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "8903687797420998-HOSPITAL": {
-        "subset": "test",
-        "action": [
-            0,
-            1,
-            -1
-        ]
-    },
-    "7745075968920678-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "9864088235986115-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "09816533364939106-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "29772346305903574-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6570083930407538-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6829906733017252-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "5762479692088036-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "31313230613733456-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "5665029171928315-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6568993455980712-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "590373652901272-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "15675760388381188-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "321780862899838-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "5891679001259942-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "2347588252335806-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "7738214402196806-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6184066307108205-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6879454583091695-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "3085736615526775-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "18382878977918304-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "2641682510354395-LAUGH": {
-        "subset": "train",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6239639358034395-LAUGH": {
-        "subset": "val",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "1664158622534473-LAUGH": {
-        "subset": "val",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "4717981941114062-LAUGH": {
-        "subset": "val",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6882531392950009-LAUGH": {
-        "subset": "val",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "09865807461279208-LAUGH": {
-        "subset": "val",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "5846501904627992-LAUGH": {
-        "subset": "test",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "6526559072462264-LAUGH": {
-        "subset": "test",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "8401408233772529-LAUGH": {
-        "subset": "test",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "11981971032201333-LAUGH": {
-        "subset": "test",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "03526559401918705-LAUGH": {
-        "subset": "test",
-        "action": [
-            1,
-            1,
-            -1
-        ]
-    },
-    "21765240452364454-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "932244226778085-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "5583246381385951-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "17501981980725656-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "8979367992517029-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "9583259576552383-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "49105647878456105-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "659969610986546-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "5844672679220855-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "46445591302051503-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "42608318827919933-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "10010774201312977-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "20003215375757932-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "13169238580393783-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "16526106983233912-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "7416958011863415-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "8323379614148649-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "6386315113243826-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "49594822580076303-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "7576174422043422-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "06915498305351697-MAKE": {
-        "subset": "train",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "2656237341874321-MAKE": {
-        "subset": "val",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "35685665490030827-MAKE": {
-        "subset": "val",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "48360219801328896-MAKE": {
-        "subset": "val",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "7874327126099574-MAKE": {
-        "subset": "val",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "46006083289905075-MAKE": {
-        "subset": "test",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "7631427136670896-MAKE": {
-        "subset": "test",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "2953819571296197-MAKE": {
-        "subset": "test",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "18229683151860843-MAKE": {
-        "subset": "test",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "564947980586459-MAKE": {
-        "subset": "test",
-        "action": [
-            2,
-            1,
-            -1
-        ]
-    },
-    "5289028229164205-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5968816675394137-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "7378759651365803-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "11091344459201657-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5400816124395869-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "34076966817997323-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "6411588958209695-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "4545746926162382-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "35429744496101856-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "8334054758517455-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "6366246076484883-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "0035172227152260316-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "16214681742267878-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "08622704664772152-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "4318620777117368-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "6421087005073287-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "7227128162421703-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5706413352425115-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5724078705072562-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "8941049731507169-ME": {
-        "subset": "train",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "31080382328753453-ME": {
-        "subset": "val",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "03554605558492718-ME": {
-        "subset": "val",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "4372505087382914-ME": {
-        "subset": "val",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5691724461344478-ME": {
-        "subset": "val",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5834482146577376-ME": {
-        "subset": "test",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "059398641585320267-ME": {
-        "subset": "test",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "2576140497310784-ME": {
-        "subset": "test",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "9101168111350384-ME": {
-        "subset": "test",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "1506254664622797-ME": {
-        "subset": "test",
-        "action": [
-            3,
-            1,
-            -1
-        ]
-    },
-    "5597756711675372-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "25388069654637513-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "024661755952086084-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6613716577421236-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "9701223233159699-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "9788744210187619-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "30879418056454777-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6280360769360449-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "5754719885013022-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "23302415519785113-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "37372322284413917-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "7542100183321416-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "04669408879006931-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "2957896307414234-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "8022209797799162-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6330153558265055-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "7657802804409537-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "8848744369087989-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "08573458832549319-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6892111735827193-NEED": {
-        "subset": "train",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "951965116580737-NEED": {
-        "subset": "val",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6635655797958437-NEED": {
-        "subset": "val",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "28071486967073533-NEED": {
-        "subset": "val",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "3092044477927096-NEED": {
-        "subset": "val",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "0505419163931653-NEED": {
-        "subset": "test",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "09656289044816302-NEED": {
-        "subset": "test",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "3304178516222478-NEED": {
-        "subset": "test",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "8882151630852417-NEED": {
-        "subset": "test",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "5297728342745216-NEED": {
-        "subset": "test",
-        "action": [
-            4,
-            1,
-            -1
-        ]
-    },
-    "6024023486827315-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "3372554058959365-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "4124339150496943-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "44835657742775226-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "9480580549313959-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "920002573608864-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "039314365088337855-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "06836612476374282-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "8679847374335452-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "25413373086933655-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "8156740964285663-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "05214904253811725-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "4103900407521166-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "3363898293845027-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "6013462323405956-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "6264899046227357-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "10439418782525745-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "9985068116144047-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "9962526929135627-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "8703954060284524-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "825397870603666-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "07700895767889127-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "5471170729843933-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "486521679239563-READ": {
-        "subset": "train",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "9629079342867501-READ": {
-        "subset": "val",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "21828575560875674-READ": {
-        "subset": "val",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "7179257483743249-READ": {
-        "subset": "val",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "07495102384627716-READ": {
-        "subset": "test",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "11695712459013086-READ": {
-        "subset": "test",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "49657630896098426-READ": {
-        "subset": "test",
-        "action": [
-            5,
-            1,
-            -1
-        ]
-    },
-    "042108112572596834-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "11889140444825674-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "20298892697180704-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "8725106492066892-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "5638884516081213-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "5874260647139629-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "17569839562454304-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "4735262621167744-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "392526939154934-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "4586425708304669-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "9019212346811638-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "7254792418208131-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "6938338914033659-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "13885945719859394-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "5395219513651961-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "2777784847144027-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "22206095570444595-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "22977877961428916-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "9351731569091157-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "5730378232143578-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "5665911030039517-SHOW": {
-        "subset": "train",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "23498393550327323-SHOW": {
-        "subset": "val",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "8066288865216531-SHOW": {
-        "subset": "val",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "6574144734991056-SHOW": {
-        "subset": "val",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "7172369637604381-SHOW": {
-        "subset": "test",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "7661574386097922-SHOW": {
-        "subset": "test",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "4570422523366495-SHOW": {
-        "subset": "test",
-        "action": [
-            6,
-            1,
-            -1
-        ]
-    },
-    "27723416720074834-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "7318461225950741-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "18446305030701837-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "801970867640186-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "880391746148123-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "1228899835934687-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "6036512594628762-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "04372360875999326-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "3732575384926575-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "3528429322583728-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "8601200936840461-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "9284158991408038-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "2730441796872136-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "8795618014543152-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "4664356046166651-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "4607474006256995-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "43058639110125596-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "39098476735830334-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "037584338939091744-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "03244901112340237-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "9763774623412582-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "7416169812825322-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "959479246086911-START": {
-        "subset": "train",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "9901180674407162-START": {
-        "subset": "val",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "8898769288524875-START": {
-        "subset": "val",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "4265612639832259-START": {
-        "subset": "val",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "09899721690579599-START": {
-        "subset": "test",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "4303906374123354-START": {
-        "subset": "test",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "861933051770718-START": {
-        "subset": "test",
-        "action": [
-            7,
-            1,
-            -1
-        ]
-    },
-    "08870380386555654-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "38330302294288865-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "1461467422069449-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "07893366237759558-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "787967286498557-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "49400025068696496-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "692674622436245-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "7757946316597986-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "7606933944529259-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "6922819981617203-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "4382853991304725-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "5241068902608812-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "10938335699122836-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "6529230226346452-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "9586306157625994-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "8893256597213444-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "975560309489212-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "16617331553945736-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "31921160795841863-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "564285386999722-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "19109474570600948-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "6864058804402533-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "6679488064816475-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "21416838482074008-STOP": {
-        "subset": "train",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "12188061798454708-STOP": {
-        "subset": "val",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "815577675920792-STOP": {
-        "subset": "val",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "35024304836544506-STOP": {
-        "subset": "val",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "680707762189654-STOP": {
-        "subset": "test",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "5495256812953944-STOP": {
-        "subset": "test",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "21963390619756917-STOP": {
-        "subset": "test",
-        "action": [
-            8,
-            1,
-            -1
-        ]
-    },
-    "7980791622967522-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "1784447552931374-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "5949109292240677-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "33746486664369946-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "9622466467630577-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "051465824178710706-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "682290148919185-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "6851460951757296-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "6954996399612601-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "41922372703553545-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "22517045161179094-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "3377761068886662-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "587281120326582-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "22448269867455983-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "9662843888411099-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "6813710286182664-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "22047412457689952-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "9517356256695517-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "5118902560831018-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "3823509508410865-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "43522383341418003-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "03799834629318344-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "02205485916234662-TELL": {
-        "subset": "train",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "030859863529683285-TELL": {
-        "subset": "val",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "1173534189335208-TELL": {
-        "subset": "val",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "2251508961669051-TELL": {
-        "subset": "val",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "39911303417002464-TELL": {
-        "subset": "test",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "9546720188783062-TELL": {
-        "subset": "test",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "9885883612306223-TELL": {
-        "subset": "test",
-        "action": [
-            9,
-            1,
-            -1
-        ]
-    },
-    "5965960580596394-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "32286789380855874-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "5338341147221657-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "5342802354346374-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "06170286063004182-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "16629744901108845-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "7815332110154865-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "7219677772800852-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "2736869319842712-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "8178850636707293-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "2903285066765289-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "31962282125568064-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "9182418417855749-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "1900191486784637-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "5977762842020984-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "8569232579936605-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "46593950586469-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "9516214129149208-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "5942910381149817-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "4478704526203494-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "1931829449490161-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "6318484937161617-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "954911942661782-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "26212242869528013-THINK": {
-        "subset": "train",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "08518084784288305-THINK": {
-        "subset": "val",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "8410803588889355-THINK": {
-        "subset": "val",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "8981918903910342-THINK": {
-        "subset": "val",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "5556596744977407-THINK": {
-        "subset": "test",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "4958280251317906-THINK": {
-        "subset": "test",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "7763349468767458-THINK": {
-        "subset": "test",
-        "action": [
-            10,
-            1,
-            -1
-        ]
-    },
-    "020805068247292002-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "7311352446331734-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "793970673925166-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "04515584665453254-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "6557753720396031-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "18609107139990644-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5356379452910163-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5326028430917451-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "39434248558375007-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "22542192344070688-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "6101010190720713-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5708302500749316-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "9115665363510697-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "955671121006822-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "3151159609618235-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "9758520719152322-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "33660180354254776-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "6225463381067158-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "7783205613186133-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5869972126630754-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5661810479332601-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "9899842959117846-TO": {
-        "subset": "train",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "4370636527220899-TO": {
-        "subset": "val",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "6057977195540294-TO": {
-        "subset": "val",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "2708877100927527-TO": {
-        "subset": "val",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "5155946397296289-TO": {
-        "subset": "test",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "11077818738004175-TO": {
-        "subset": "test",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "48253131456940523-TO": {
-        "subset": "test",
-        "action": [
-            11,
-            1,
-            -1
-        ]
-    },
-    "7903893233633115-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "31049412762325446-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6810397598953175-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "9663239092789866-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "2374155228317818-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6191415507296982-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "27832701315476815-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "3018334807491294-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "2999107393441156-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "8604241021179426-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "941475953685674-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6762437534373142-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6605969835390502-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "5190569218964376-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6745834273988278-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "4268222409175071-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "030959011181703078-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6593382490905721-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "40550375821025386-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6424637597161564-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "40156343723600907-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "0497069696398067-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6508787541133374-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "9618610602589022-UNDERSTAND": {
-        "subset": "train",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "6504234134902995-UNDERSTAND": {
-        "subset": "val",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "5169212541197368-UNDERSTAND": {
-        "subset": "val",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "8071758688201891-UNDERSTAND": {
-        "subset": "val",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "4687993210650012-UNDERSTAND": {
-        "subset": "test",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "2621288608804102-UNDERSTAND": {
-        "subset": "test",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "9717361996927067-UNDERSTAND": {
-        "subset": "test",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "1376861841044581-UNDERSTAND": {
-        "subset": "test",
-        "action": [
-            12,
-            1,
-            -1
-        ]
-    },
-    "15263395462454632-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "8220736980572507-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "384440946378765-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "7918796234967189-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "431834858238225-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6363494051663907-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6462406278843633-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6692766688263203-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "7613568684951131-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6368510219023522-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "19418271966399425-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "8607947465067156-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "9783535742177485-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "0863524332460317-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "3372774069388451-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6530795087181671-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "524881037999334-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "8270409786931296-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "72369024028368-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "5185122660022305-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "031074918450269218-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "624921199330932-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "8068498353201266-WAIT": {
-        "subset": "train",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "6807479789190645-WAIT": {
-        "subset": "val",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "4219284432732393-WAIT": {
-        "subset": "val",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "5205785031120291-WAIT": {
-        "subset": "val",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "25762006967045403-WAIT": {
-        "subset": "test",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "7743737332850424-WAIT": {
-        "subset": "test",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "5419469718181713-WAIT": {
-        "subset": "test",
-        "action": [
-            13,
-            1,
-            -1
-        ]
-    },
-    "0736334414323001-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "006759596328494544-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "5893101049934577-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "8459253067700705-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "3243330513888747-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "41884104518222887-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "3330583417668693-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "4764899254063222-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "7018981359142265-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "530531684380597-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "02600379174001821-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "3806176742244156-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "49163773457742876-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "7361516326952664-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "10421760727572105-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "6285630118257322-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "9310781022563859-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "2155045647013336-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "823110623400116-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "4912279937692121-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "1549671141661335-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "35453002868935335-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "7340640373745668-WANT": {
-        "subset": "train",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "28865913696775825-WANT": {
-        "subset": "val",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "7315299526625414-WANT": {
-        "subset": "val",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "4112986912815155-WANT": {
-        "subset": "val",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "0379196499588077-WANT": {
-        "subset": "test",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "5676022999784702-WANT": {
-        "subset": "test",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "5935927846691731-WANT": {
-        "subset": "test",
-        "action": [
-            14,
-            1,
-            -1
-        ]
-    },
-    "35097013272968836-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "9959384247496594-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "9207650208931104-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "0999990986760626-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "582860551991583-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "8940834130363486-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "7389026313346527-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "4950540994948227-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "19978233231036002-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "618543700116903-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "6080391494064927-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "16452616343668436-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "3482678416066407-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "2570647676865354-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "28644332710493026-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "0940927928215547-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "7241712002802467-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "39100553497986446-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "8695896404892567-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "9173898440387622-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "17177027793632993-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "7326855771738956-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "4390289106690757-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "1508156580679143-WRITE": {
-        "subset": "train",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "038974698230258786-WRITE": {
-        "subset": "val",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "8903054743444117-WRITE": {
-        "subset": "val",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "49076375253453164-WRITE": {
-        "subset": "val",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "32579010273379394-WRITE": {
-        "subset": "test",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "8379501891533077-WRITE": {
-        "subset": "test",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    },
-    "41981255125221795-WRITE": {
-        "subset": "test",
-        "action": [
-            15,
-            1,
-            -1
-        ]
-    }
+  "5892698339580624-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "43142287081368647-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "9571221473356939-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "28791918942913153-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "5851960225980641-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "16499691175444786-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8842873768781858-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "3284942530084891-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "3759922548209751-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "5903218158401913-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2816314098780288-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8311298382278862-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "5986181755240401-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4315957172962892-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "997878459075781-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7710150320331248-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "08795608187591553-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "513048409174413-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8877316023603796-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2657292811841865-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "13051783303937703-HOSPITAL": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8512749353267319-HOSPITAL": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "0391236078587216-HOSPITAL": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "35176220038590755-HOSPITAL": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "9543121609158431-HOSPITAL": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "29975883523571745-HOSPITAL": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2305871847828358-HOSPITAL": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "03617049378353854-HOSPITAL": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7921373203371331-HOSPITAL": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8903687797420998-HOSPITAL": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7745075968920678-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "9864088235986115-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "09816533364939106-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "29772346305903574-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6570083930407538-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6829906733017252-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5762479692088036-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "31313230613733456-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5665029171928315-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6568993455980712-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "590373652901272-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "15675760388381188-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "321780862899838-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5891679001259942-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "2347588252335806-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7738214402196806-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6184066307108205-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6879454583091695-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "3085736615526775-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "18382878977918304-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "2641682510354395-LAUGH": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6239639358034395-LAUGH": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "1664158622534473-LAUGH": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4717981941114062-LAUGH": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6882531392950009-LAUGH": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "09865807461279208-LAUGH": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5846501904627992-LAUGH": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6526559072462264-LAUGH": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "8401408233772529-LAUGH": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "11981971032201333-LAUGH": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "03526559401918705-LAUGH": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "21765240452364454-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "932244226778085-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "5583246381385951-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "17501981980725656-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "8979367992517029-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "9583259576552383-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "49105647878456105-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "659969610986546-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "5844672679220855-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "46445591302051503-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "42608318827919933-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "10010774201312977-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "20003215375757932-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "13169238580393783-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "16526106983233912-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7416958011863415-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "8323379614148649-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6386315113243826-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "49594822580076303-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7576174422043422-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "06915498305351697-MAKE": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2656237341874321-MAKE": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "35685665490030827-MAKE": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "48360219801328896-MAKE": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7874327126099574-MAKE": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "46006083289905075-MAKE": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7631427136670896-MAKE": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2953819571296197-MAKE": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "18229683151860843-MAKE": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "564947980586459-MAKE": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "5289028229164205-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5968816675394137-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7378759651365803-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "11091344459201657-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5400816124395869-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "34076966817997323-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6411588958209695-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4545746926162382-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "35429744496101856-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "8334054758517455-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6366246076484883-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "0035172227152260316-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "16214681742267878-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "08622704664772152-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4318620777117368-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6421087005073287-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7227128162421703-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5706413352425115-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5724078705072562-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "8941049731507169-ME": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "31080382328753453-ME": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "03554605558492718-ME": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4372505087382914-ME": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5691724461344478-ME": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5834482146577376-ME": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "059398641585320267-ME": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "2576140497310784-ME": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "9101168111350384-ME": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "1506254664622797-ME": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5597756711675372-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "25388069654637513-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "024661755952086084-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6613716577421236-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9701223233159699-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9788744210187619-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "30879418056454777-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6280360769360449-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "5754719885013022-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "23302415519785113-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "37372322284413917-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7542100183321416-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "04669408879006931-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "2957896307414234-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8022209797799162-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6330153558265055-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7657802804409537-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8848744369087989-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "08573458832549319-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6892111735827193-NEED": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "951965116580737-NEED": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6635655797958437-NEED": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "28071486967073533-NEED": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "3092044477927096-NEED": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "0505419163931653-NEED": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "09656289044816302-NEED": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "3304178516222478-NEED": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8882151630852417-NEED": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "5297728342745216-NEED": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6024023486827315-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "3372554058959365-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "4124339150496943-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "44835657742775226-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9480580549313959-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "920002573608864-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "039314365088337855-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "06836612476374282-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8679847374335452-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "25413373086933655-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8156740964285663-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "05214904253811725-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "4103900407521166-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "3363898293845027-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6013462323405956-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6264899046227357-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "10439418782525745-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9985068116144047-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9962526929135627-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8703954060284524-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "825397870603666-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "07700895767889127-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "5471170729843933-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "486521679239563-READ": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9629079342867501-READ": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "21828575560875674-READ": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "7179257483743249-READ": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "07495102384627716-READ": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "11695712459013086-READ": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "49657630896098426-READ": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "042108112572596834-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "11889140444825674-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "20298892697180704-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8725106492066892-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5638884516081213-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5874260647139629-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "17569839562454304-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4735262621167744-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "392526939154934-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4586425708304669-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "9019212346811638-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "7254792418208131-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6938338914033659-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "13885945719859394-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5395219513651961-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2777784847144027-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "22206095570444595-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "22977877961428916-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "9351731569091157-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5730378232143578-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5665911030039517-SHOW": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "23498393550327323-SHOW": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8066288865216531-SHOW": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6574144734991056-SHOW": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "7172369637604381-SHOW": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "7661574386097922-SHOW": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4570422523366495-SHOW": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "27723416720074834-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7318461225950741-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "18446305030701837-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "801970867640186-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "880391746148123-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "1228899835934687-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6036512594628762-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "04372360875999326-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "3732575384926575-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "3528429322583728-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "8601200936840461-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "9284158991408038-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "2730441796872136-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "8795618014543152-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4664356046166651-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4607474006256995-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "43058639110125596-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "39098476735830334-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "037584338939091744-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "03244901112340237-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "9763774623412582-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7416169812825322-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "959479246086911-START": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "9901180674407162-START": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "8898769288524875-START": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4265612639832259-START": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "09899721690579599-START": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4303906374123354-START": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "861933051770718-START": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "08870380386555654-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "38330302294288865-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "1461467422069449-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "07893366237759558-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "787967286498557-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "49400025068696496-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "692674622436245-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7757946316597986-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7606933944529259-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6922819981617203-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "4382853991304725-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5241068902608812-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "10938335699122836-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6529230226346452-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "9586306157625994-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8893256597213444-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "975560309489212-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "16617331553945736-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "31921160795841863-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "564285386999722-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "19109474570600948-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6864058804402533-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6679488064816475-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "21416838482074008-STOP": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "12188061798454708-STOP": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "815577675920792-STOP": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "35024304836544506-STOP": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "680707762189654-STOP": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5495256812953944-STOP": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "21963390619756917-STOP": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7980791622967522-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1784447552931374-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5949109292240677-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "33746486664369946-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9622466467630577-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "051465824178710706-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "682290148919185-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6851460951757296-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6954996399612601-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "41922372703553545-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "22517045161179094-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "3377761068886662-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "587281120326582-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "22448269867455983-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9662843888411099-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6813710286182664-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "22047412457689952-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9517356256695517-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5118902560831018-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "3823509508410865-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "43522383341418003-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "03799834629318344-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "02205485916234662-TELL": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "030859863529683285-TELL": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1173534189335208-TELL": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "2251508961669051-TELL": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "39911303417002464-TELL": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9546720188783062-TELL": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9885883612306223-TELL": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5965960580596394-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "32286789380855874-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5338341147221657-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5342802354346374-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "06170286063004182-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "16629744901108845-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7815332110154865-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7219677772800852-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2736869319842712-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8178850636707293-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2903285066765289-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "31962282125568064-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "9182418417855749-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "1900191486784637-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5977762842020984-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8569232579936605-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "46593950586469-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "9516214129149208-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5942910381149817-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "4478704526203494-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "1931829449490161-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "6318484937161617-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "954911942661782-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "26212242869528013-THINK": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "08518084784288305-THINK": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8410803588889355-THINK": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8981918903910342-THINK": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5556596744977407-THINK": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "4958280251317906-THINK": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7763349468767458-THINK": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "020805068247292002-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7311352446331734-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "793970673925166-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "04515584665453254-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6557753720396031-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "18609107139990644-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5356379452910163-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5326028430917451-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "39434248558375007-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "22542192344070688-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6101010190720713-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5708302500749316-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9115665363510697-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "955671121006822-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "3151159609618235-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9758520719152322-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "33660180354254776-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6225463381067158-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7783205613186133-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5869972126630754-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5661810479332601-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9899842959117846-TO": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "4370636527220899-TO": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6057977195540294-TO": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "2708877100927527-TO": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5155946397296289-TO": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "11077818738004175-TO": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "48253131456940523-TO": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7903893233633115-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "31049412762325446-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6810397598953175-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9663239092789866-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2374155228317818-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6191415507296982-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "27832701315476815-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "3018334807491294-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2999107393441156-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8604241021179426-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "941475953685674-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6762437534373142-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6605969835390502-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "5190569218964376-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6745834273988278-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "4268222409175071-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "030959011181703078-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6593382490905721-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "40550375821025386-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6424637597161564-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "40156343723600907-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "0497069696398067-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6508787541133374-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9618610602589022-UNDERSTAND": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6504234134902995-UNDERSTAND": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "5169212541197368-UNDERSTAND": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8071758688201891-UNDERSTAND": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "4687993210650012-UNDERSTAND": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2621288608804102-UNDERSTAND": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9717361996927067-UNDERSTAND": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "1376861841044581-UNDERSTAND": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "15263395462454632-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8220736980572507-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "384440946378765-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7918796234967189-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "431834858238225-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6363494051663907-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6462406278843633-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6692766688263203-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7613568684951131-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6368510219023522-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "19418271966399425-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8607947465067156-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "9783535742177485-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "0863524332460317-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "3372774069388451-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6530795087181671-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "524881037999334-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8270409786931296-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "72369024028368-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "5185122660022305-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "031074918450269218-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "624921199330932-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8068498353201266-WAIT": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6807479789190645-WAIT": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "4219284432732393-WAIT": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "5205785031120291-WAIT": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "25762006967045403-WAIT": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7743737332850424-WAIT": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "5419469718181713-WAIT": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "0736334414323001-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "006759596328494544-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5893101049934577-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "8459253067700705-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "3243330513888747-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "41884104518222887-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "3330583417668693-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4764899254063222-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7018981359142265-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "530531684380597-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "02600379174001821-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "3806176742244156-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "49163773457742876-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7361516326952664-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "10421760727572105-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6285630118257322-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "9310781022563859-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "2155045647013336-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "823110623400116-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4912279937692121-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "1549671141661335-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "35453002868935335-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7340640373745668-WANT": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "28865913696775825-WANT": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7315299526625414-WANT": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4112986912815155-WANT": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "0379196499588077-WANT": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5676022999784702-WANT": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5935927846691731-WANT": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "35097013272968836-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9959384247496594-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9207650208931104-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "0999990986760626-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "582860551991583-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8940834130363486-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7389026313346527-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "4950540994948227-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "19978233231036002-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "618543700116903-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "6080391494064927-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "16452616343668436-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "3482678416066407-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "2570647676865354-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "28644332710493026-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "0940927928215547-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7241712002802467-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "39100553497986446-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8695896404892567-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9173898440387622-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "17177027793632993-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7326855771738956-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "4390289106690757-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "1508156580679143-WRITE": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "038974698230258786-WRITE": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8903054743444117-WRITE": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "49076375253453164-WRITE": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "32579010273379394-WRITE": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8379501891533077-WRITE": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "41981255125221795-WRITE": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8860841204863810-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2879350103874747-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "9370001199469725-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "9564761242703635-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4963703762417626-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7052397438671187-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "3610375596274633-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "1581243911535093-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8772421005997871-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2299227985082245-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2381570775088779-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8121450022798773-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "1445685163552394-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4754458140792630-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "1774654607432436-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "2391354197208838-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7798947066477950-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8921304831087321-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "8127388748575816-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "6617570620603726-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "6343832518495173-HOSPITAL_flip": {
+    "subset": "train",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4946741649514457-HOSPITAL_flip": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7487521584544098-HOSPITAL_flip": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7187014987832721-HOSPITAL_flip": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4722514869165751-HOSPITAL_flip": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "4536754695385204-HOSPITAL_flip": {
+    "subset": "test",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7478883601635683-HOSPITAL_flip": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "5803342386337081-HOSPITAL_flip": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "9286451944025257-HOSPITAL_flip": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "1345136805141587-HOSPITAL_flip": {
+    "subset": "val",
+    "action": [
+      0,
+      1,
+      -1
+    ]
+  },
+  "7986098018919429-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "9255269691700435-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "3929106539157094-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4866639468418015-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5574094805237207-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7726523214756215-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6574415294528770-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5673900474388549-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4916279062876520-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "2325974899590990-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7824563097124452-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6646037590824680-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6383787221299636-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7128971299100223-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "9717757041662129-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4561726938597617-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7051154202768818-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7808772905629365-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "2684238442891924-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "8412959513555089-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7516536422250943-LAUGH_flip": {
+    "subset": "train",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5701712233121275-LAUGH_flip": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4025094283238402-LAUGH_flip": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "1455681724583253-LAUGH_flip": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "5724740953889474-LAUGH_flip": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6181681595633474-LAUGH_flip": {
+    "subset": "test",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "4822400708333934-LAUGH_flip": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "1927654204045814-LAUGH_flip": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "7874315809089326-LAUGH_flip": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "8871865558699716-LAUGH_flip": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "6013190508690150-LAUGH_flip": {
+    "subset": "val",
+    "action": [
+      1,
+      1,
+      -1
+    ]
+  },
+  "2811898570613545-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "8866769808985199-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2551821341511427-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2944560780569737-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "5812139693539733-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7203745137674413-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "3267288350546526-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7434229865941944-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6346842384325703-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6277232554994439-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2520717029786975-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2922756853499893-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6339703041506960-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4560880672206117-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "1060586861867753-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4376132256128842-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "3042618088312728-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4763648780366829-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4821165714835607-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6520349244611386-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "5695276830413098-MAKE_flip": {
+    "subset": "train",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4459048693919523-MAKE_flip": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7039742455080471-MAKE_flip": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "6752521004456105-MAKE_flip": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "1856429849919444-MAKE_flip": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "2818446555434027-MAKE_flip": {
+    "subset": "test",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "9197677795226978-MAKE_flip": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7529369645443983-MAKE_flip": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "9147650326017778-MAKE_flip": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "4491822615817100-MAKE_flip": {
+    "subset": "val",
+    "action": [
+      2,
+      1,
+      -1
+    ]
+  },
+  "7594615586827366-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7730536353447314-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4807512760776438-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "1719136469550845-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7218908753204715-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "3211969317494917-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7719299197245870-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "2372696733172634-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "9956408054803364-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4006747099375566-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6906195671226424-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "7978174478113313-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5529301606925829-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "2876405120540764-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5865003500176691-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "2773733917383231-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "9958536121738546-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5706374721921972-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "3543165567952942-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5097801186915074-ME_flip": {
+    "subset": "train",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6953843694912830-ME_flip": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4949074855512077-ME_flip": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "5304861119806305-ME_flip": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "9400033008877642-ME_flip": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4072790304162119-ME_flip": {
+    "subset": "test",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "4851707343386904-ME_flip": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "8741997559692462-ME_flip": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "6709497238605636-ME_flip": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "1465631530276786-ME_flip": {
+    "subset": "val",
+    "action": [
+      3,
+      1,
+      -1
+    ]
+  },
+  "2733930203247965-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "3717380700166662-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "1906677972692301-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7582473442108140-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9243828104459468-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "4085817207121329-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6701591681339427-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "5680460662396414-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8368828582685784-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9165162430326750-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7439436947105555-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7186614624555035-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8097644278187465-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9606324447931605-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "4830208169580428-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9829321806207500-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "7417281497410536-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "2349232799615107-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6120407845107931-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8930924399812818-NEED_flip": {
+    "subset": "train",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "3356355158311416-NEED_flip": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "8148146721579045-NEED_flip": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9924901408509684-NEED_flip": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "5596105403298417-NEED_flip": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "6550665819926587-NEED_flip": {
+    "subset": "test",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "2079774225424297-NEED_flip": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "9758956174387653-NEED_flip": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "4363161675713976-NEED_flip": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "3146021290610961-NEED_flip": {
+    "subset": "val",
+    "action": [
+      4,
+      1,
+      -1
+    ]
+  },
+  "2460302706857091-READ_flip": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "2866555978459119-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6912092976295322-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9230578255548064-READ_flip": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "5825680019154595-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8289268514177518-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "4735139775623184-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "1078639615409693-READ_flip": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8430740111731975-READ_flip": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8783141596882231-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "2666345489069475-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6048966880322259-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "3423137976642254-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6971578272827459-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "2620758091440192-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8384181897921031-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "2348757758175055-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9462911879524233-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "4694492768500816-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9407731277990181-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6234583596540304-READ_flip": {
+    "subset": "test",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "1930762773658538-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "4760820413716143-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9240465949799954-READ_flip": {
+    "subset": "val",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "1425121497416974-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "8549408059799965-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "5063489682021265-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "9446698811147057-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6381459819630128-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "6587650480475413-READ_flip": {
+    "subset": "train",
+    "action": [
+      5,
+      1,
+      -1
+    ]
+  },
+  "1347757369455536-SHOW_flip": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2856427287273148-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5766369796108611-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6150891574066981-SHOW_flip": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6653518684429025-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "9927858749370409-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8715318920527459-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2996920797274746-SHOW_flip": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "5285265384047099-SHOW_flip": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6994576371024703-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4264648485314408-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "7295216429068679-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "7601306530731727-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2951892304801858-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "9767558884280662-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4738262101784087-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6257757646279943-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8811272572609561-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8160017128861751-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2495517523756168-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "4385320732056929-SHOW_flip": {
+    "subset": "test",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8740335084795950-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "2673092559841500-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "1517939769059558-SHOW_flip": {
+    "subset": "val",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "3036792187032147-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "8280956260005178-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "6337275132687289-SHOW_flip": {
+    "subset": "train",
+    "action": [
+      6,
+      1,
+      -1
+    ]
+  },
+  "1113123781938544-START_flip": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "1387503890819955-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "2731451998758908-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7155243837151653-START_flip": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "1763127093936666-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "3811082463743378-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4242953872356815-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6841462316339684-START_flip": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "2403457552392866-START_flip": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6004896744471458-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7549086723026671-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "3995338917753565-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "9902962595615656-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4186619397542466-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "3817687945835429-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "5433027647202747-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6519458828052249-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6912603663218658-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7486681585333321-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6124472112546923-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4974232387803268-START_flip": {
+    "subset": "test",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7115050716678770-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "5684542452979495-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "8752870029785203-START_flip": {
+    "subset": "val",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "9348990354878253-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4877386203321804-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "6803461641311079-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "4103280024836799-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "7840577474815005-START_flip": {
+    "subset": "train",
+    "action": [
+      7,
+      1,
+      -1
+    ]
+  },
+  "5337003198023154-STOP_flip": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8673135512232215-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8861999528709953-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7613428358683702-STOP_flip": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7592444940505727-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8569137819178030-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "1235212603010802-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7135096659616746-STOP_flip": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "4523176438252709-STOP_flip": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "4825447573108088-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "3319254528082943-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5777831407155312-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7932540714781716-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8534498158334546-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7166994888711632-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5269633797704231-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "3037137952023944-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "2123335920354097-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5384191799811428-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "5997145429816473-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "4103157737955328-STOP_flip": {
+    "subset": "test",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8377991899392530-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "8918924442111062-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "1564804688634234-STOP_flip": {
+    "subset": "val",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "9000768788704801-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "1290637398158541-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6958414007956182-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "4731688766792467-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "6812498879812631-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "2763568469853580-STOP_flip": {
+    "subset": "train",
+    "action": [
+      8,
+      1,
+      -1
+    ]
+  },
+  "7735915956851553-TELL_flip": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "4213641813527903-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6693086438532904-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1420761625942607-TELL_flip": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1180663333440475-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "2359202762828891-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "8235223930409292-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1661169550078093-TELL_flip": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5676891466804736-TELL_flip": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6624610069346154-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "7541858455841211-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1209065258005371-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6812786099129158-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1441251948644047-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1369689837912495-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "4865184463433949-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5106390250218502-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "8164544768977987-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "2154934865453130-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6610433385031589-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "4791243303926585-TELL_flip": {
+    "subset": "test",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5841675056998710-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5885498646544737-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "6075327466907637-TELL_flip": {
+    "subset": "val",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "9818111618954633-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "3323227102694808-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "1372427063199669-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "3714668431830563-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "4371945003518727-TELL_flip": {
+    "subset": "train",
+    "action": [
+      9,
+      1,
+      -1
+    ]
+  },
+  "5784147911843630-THINK_flip": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7941765082840509-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7471615704558243-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8381512686466110-THINK_flip": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7175856516591857-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "6209801847732617-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8017592531750677-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8094508668023667-THINK_flip": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7099155551735082-THINK_flip": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2754147457437850-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "9574747765806034-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "9923665701020795-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7485817082798309-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7141009069516799-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2872524997199077-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8842589411913844-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "7471132360301061-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "4459739442345316-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "4400712275254104-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "1213953198168465-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2002618148915863-THINK_flip": {
+    "subset": "test",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "5886396334947688-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "1958958540057226-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8956041181644221-THINK_flip": {
+    "subset": "val",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "6135526438502756-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "3718643935692539-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "2560217617688928-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8495541035904848-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "3375958394984591-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "8606720192463485-THINK_flip": {
+    "subset": "train",
+    "action": [
+      10,
+      1,
+      -1
+    ]
+  },
+  "3355663938653215-TO_flip": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "1896414552793788-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "2832379717174406-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7671104953035555-TO_flip": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "4875109296370193-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6740690600322434-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7821227131918892-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5853758237416207-TO_flip": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "8933993857528837-TO_flip": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9378105016509394-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6409999627218917-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "4737122289708770-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9153808321812340-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9934948873024736-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "5537159263845670-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "2488050029845079-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7984990821302477-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "1808569213513038-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "1921899845923728-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "3969278535473680-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "7988885456787325-TO_flip": {
+    "subset": "test",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "2461260049501918-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "9459453490802729-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "8494509045555283-TO_flip": {
+    "subset": "val",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6677753461280018-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "4626216020924371-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6576507294697417-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "6736615813492318-TO_flip": {
+    "subset": "train",
+    "action": [
+      11,
+      1,
+      -1
+    ]
+  },
+  "3937510884706102-UNDERSTAND_flip": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9319237734723145-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2817194705366426-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "4760398048860097-UNDERSTAND_flip": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2083988275558574-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9952960952530591-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9739460524840495-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6612683097049890-UNDERSTAND_flip": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "7409213410493059-UNDERSTAND_flip": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8409422601351279-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "7619277309512252-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "7823563215446309-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "4392432819513526-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6391301835498255-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "1710021079776378-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6864052280820390-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8074888722893125-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "4156372049585132-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2694634682513938-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9943393544301015-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "1634576880910958-UNDERSTAND_flip": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9764028504791580-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "5957860749189984-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2415193783792853-UNDERSTAND_flip": {
+    "subset": "test",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "1162402829641506-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8284757342495583-UNDERSTAND_flip": {
+    "subset": "val",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9734177141118820-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "5004659728802335-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "2041299587339169-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "9909435178086437-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "8911919318470100-UNDERSTAND_flip": {
+    "subset": "train",
+    "action": [
+      12,
+      1,
+      -1
+    ]
+  },
+  "6738046494222664-WAIT_flip": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "2114921915153062-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "5511763722933584-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "2837484667138087-WAIT_flip": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6743038442013728-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6617551461863630-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1946889553244236-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8990867929902676-WAIT_flip": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1968489150098842-WAIT_flip": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "2372919076563686-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "6232822118104814-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8448216048615884-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7245913892696269-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1433807193431310-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "3312078969285869-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "9405438199041586-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1446878087212738-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7332487819902712-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7847383077817606-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1320978998849490-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "2742180211045402-WAIT_flip": {
+    "subset": "test",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "2369670013221619-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "5532205063290965-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8370691288554170-WAIT_flip": {
+    "subset": "val",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "7107810938217353-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "4344397093016053-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "8938417273339240-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "4056425712661193-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "1234633308652456-WAIT_flip": {
+    "subset": "train",
+    "action": [
+      13,
+      1,
+      -1
+    ]
+  },
+  "3784244879043257-WANT_flip": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6837164955689031-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4510121340470290-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7352863133413479-WANT_flip": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4792813849752543-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5444480431812395-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6506851052549632-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "2133778854392388-WANT_flip": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "1827977127463142-WANT_flip": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5092869326019552-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7463145172879508-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "2460067291525151-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4791686768071489-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "1119383962866078-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "1817660259027953-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "3447546388497515-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "9307476320071650-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "2417183351017528-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6291853492454742-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4008235907770839-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4274297551800265-WANT_flip": {
+    "subset": "test",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "5315295353789104-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7062152776904819-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7612394617949974-WANT_flip": {
+    "subset": "val",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "4893264345340208-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6536837281418952-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "3823601020588675-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "6160055442217601-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7674111054179705-WANT_flip": {
+    "subset": "train",
+    "action": [
+      14,
+      1,
+      -1
+    ]
+  },
+  "7186655696204332-WRITE_flip": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "2611703822829325-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7906493779409269-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8725632424402950-WRITE_flip": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "5004731967326184-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9019423966958414-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9254211847632843-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "3352837049745984-WRITE_flip": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9849607551588524-WRITE_flip": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "6652210332597957-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "6870691241219624-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "6094455498025257-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9442315450970353-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "2713865939958481-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9007766981804861-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "6678843333657930-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8793675797350192-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "5314867682873885-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "8039016658445225-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7554792853086248-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7354635122183871-WRITE_flip": {
+    "subset": "test",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "3646728667209455-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "3180889343807151-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7921742903318515-WRITE_flip": {
+    "subset": "val",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9064878248311363-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7738515830484078-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "7241575323561384-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "4141081796223062-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "2271868447651693-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  },
+  "9157203181078101-WRITE_flip": {
+    "subset": "train",
+    "action": [
+      15,
+      1,
+      -1
+    ]
+  }
 }
