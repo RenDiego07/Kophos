@@ -5,10 +5,11 @@ import torch
 import numpy as np
 import mediapipe as mp
 import tempfile
+import httpx
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-# Parche para importar desde el directorio raíz si estás en /scripts
+from pydantic import BaseModel
 
 from model import BiLSTMSignModel
 
@@ -31,7 +32,7 @@ app.add_middleware(
 )
 
 # 1. Configuración de Parámetros Globales
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "best_bilstm_model-2.pth")
+MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "best_bilstm_model-3.pth")
 CLASSES = ["HOSPITAL", "LAUGH", "MAKE", "ME", "NEED", "READ", "SHOW", "START", "STOP", "TELL", "THINK", "TO", "UNDERSTAND", "WAIT", "WANT", "WRITE"]
 SEQUENCE_LENGTH = 30
 FEATURE_DIM = 225
@@ -46,7 +47,50 @@ model.load_state_dict(checkpoint['model_state_dict'])
 model.to(device)
 model.eval()
 
-# 3. Inicializar MediaPipe
+# 3. Configuración HuggingFace
+HF_TOKEN = os.getenv("HF_TOKEN", "")
+HF_MODEL = os.getenv("HF_MODEL", "facebook/blenderbot-400M-distill")
+HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL}"
+
+class ChatRequest(BaseModel):
+    sentence: str
+    past_user_inputs: list[str] = []
+    generated_responses: list[str] = []
+
+@app.post("/chat/")
+async def chat_with_cpu(req: ChatRequest):
+    if not req.sentence.strip():
+        return JSONResponse(status_code=400, content={"error": "La frase está vacía."})
+
+    headers = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
+    payload = {
+        "inputs": {
+            "text": req.sentence,
+            "past_user_inputs": req.past_user_inputs,
+            "generated_responses": req.generated_responses,
+        }
+    }
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        resp = await client.post(HF_API_URL, json=payload, headers=headers)
+
+    if resp.status_code == 503:
+        estimated = resp.json().get("estimated_time", "?")
+        return JSONResponse(status_code=503, content={"error": f"Modelo cargando, intenta en {estimated:.0f}s."})
+
+    if resp.status_code != 200:
+        return JSONResponse(status_code=502, content={"error": f"HuggingFace error {resp.status_code}: {resp.text[:200]}"})
+
+    data = resp.json()
+    generated = data.get("generated_text", "")
+
+    return {
+        "response": generated,
+        "past_user_inputs": req.past_user_inputs + [req.sentence],
+        "generated_responses": req.generated_responses + [generated],
+    }
+
+# 4. Inicializar MediaPipe
 mp_holistic = mp.solutions.holistic
 
 def extract_features(results):
