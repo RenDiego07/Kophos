@@ -2,263 +2,584 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Kophos MVP - ASL Predictor</title>
-
-  <!-- Librerías de MediaPipe para la interfaz visual -->
+  <title>Kophos MVP</title>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
-
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      text-align: center;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      max-width: 720px;
+      margin: 30px auto;
+      padding: 0 16px 40px;
+      background: #f0f2f5;
+      color: #1f2937;
     }
 
-    /* Contenedor relativo para superponer el canvas sobre el video */
+    h1 {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    /* ── Mode tabs ── */
+    .mode-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .mode-tab {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px solid #d1d5db;
+      background: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #4b5563;
+    }
+    .mode-tab.active {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #fff;
+    }
+    .mode-tab:hover:not(.active) { background: #f3f4f6; }
+
+    /* ── Camera ── */
     .video-container {
       position: relative;
       width: 100%;
-      max-width: 640px;
-      margin: 0 auto 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      background: #000;
     }
-
     video {
       width: 100%;
-      border: 2px solid #333;
-      border-radius: 12px;
       display: block;
-      /* Efecto espejo para el usuario */
-      transform: scaleX(-1); 
+      transform: scaleX(-1);
     }
-
     canvas {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      z-index: 10;
-      /* Efecto espejo para que los puntos coincidan con el video */
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       transform: scaleX(-1);
-      pointer-events: none; 
+      pointer-events: none;
     }
 
+    /* ── Generic button ── */
     button {
-      padding: 12px 20px;
-      margin: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
+      padding: 11px 18px;
+      border-radius: 9px;
       border: none;
-      background-color: #222;
-      color: white;
-      transition: background-color 0.3s;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── Controls row ── */
+    .controls { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .controls button { flex: 1; }
+
+    #startBtn  { background: #1f2937; color: #fff; }
+    #startBtn:hover:not(:disabled)  { background: #374151; }
+    #recordBtn { background: #dc2626; color: #fff; }
+    #recordBtn:hover:not(:disabled) { background: #b91c1c; }
+    #stopBtn   { background: #374151; color: #fff; }
+    #stopBtn:hover:not(:disabled)   { background: #1f2937; }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .card-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 10px;
     }
 
-    button:disabled {
-      background-color: #999;
-      cursor: not-allowed;
+    /* ── Sentence builder ── */
+    .sentence-words {
+      min-height: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .word-chip {
+      background: #ede9fe;
+      color: #4f46e5;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .word-chip.latest { background: #4f46e5; color: #fff; }
+    .sentence-btns { display: flex; gap: 8px; }
+    #undoBtn  { background: #fef3c7; color: #92400e; font-size: 13px; padding: 8px 14px; }
+    #undoBtn:hover:not(:disabled)  { background: #fde68a; }
+    #clearBtn { background: #fee2e2; color: #991b1b; font-size: 13px; padding: 8px 14px; }
+    #clearBtn:hover:not(:disabled) { background: #fca5a5; }
+
+    /* ── Status bar ── */
+    #statusMsg {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      min-height: 22px;
+      margin-bottom: 14px;
     }
 
-    button:hover:not(:disabled) {
-      background-color: #444;
-    }
+    /* ── Result panel ── */
+    #resultPanel { border-left: 4px solid #4f46e5; display: none; }
+    #resultPanel.visible { display: block; }
 
-    #recordBtn {
-      background-color: #d93025; /* Rojo para grabar */
+    .result-word {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
     }
+    .result-word.unknown { color: #9ca3af; }
+    .result-conf {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+    .result-probs {
+      font-size: 12px;
+      font-family: monospace;
+      color: #9ca3af;
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .result-actions { display: flex; gap: 8px; }
+    #acceptBtn {
+      flex: 1; background: #16a34a; color: #fff; font-size: 15px;
+    }
+    #acceptBtn:hover:not(:disabled) { background: #15803d; }
+    #acceptBtn:disabled { opacity: 0.35; }
+    #retryBtn {
+      flex: 1; background: #6b7280; color: #fff; font-size: 15px;
+    }
+    #retryBtn:hover { background: #4b5563; }
 
-    #result {
-      margin-top: 25px;
-      padding: 15px;
-      border-radius: 10px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      text-align: left;
-      white-space: pre-wrap;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* ── Score badge ── */
+    .score-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    .score-high  { background: #dcfce7; color: #15803d; }
+    .score-mid   { background: #fef9c3; color: #854d0e; }
+    .score-low   { background: #fee2e2; color: #991b1b; }
+
+    /* ── Chat section ── */
+    #chatSection { display: none; }
+    #chatSection.visible { display: block; }
+
+    #sendCpuBtn {
+      width: 100%;
+      background: #4f46e5;
+      color: #fff;
+      font-size: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 12px;
+    }
+    #sendCpuBtn:hover:not(:disabled) { background: #4338ca; }
+
+    .conversation {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      min-height: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .conv-placeholder { color: #9ca3af; text-align: center; font-size: 14px; margin: auto; }
+
+    .msg-wrap { display: flex; flex-direction: column; }
+    .msg-wrap.user { align-items: flex-end; }
+    .msg-wrap.cpu  { align-items: flex-start; }
+
+    .msg-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+    }
+    .msg-wrap.user .msg-label { color: #4f46e5; }
+    .msg-wrap.cpu  .msg-label { color: #6b7280; }
+
+    .msg-bubble {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .msg-wrap.user .msg-bubble {
+      background: #4f46e5; color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .msg-wrap.cpu .msg-bubble {
+      background: #f3f4f6; color: #111827;
+      border-bottom-left-radius: 4px;
     }
   </style>
 </head>
 
 <body>
-  <h1>Kophos MVP - ASL Predictor</h1>
+  <h1>Kophos MVP — ASL Predictor</h1>
 
+  <!-- Mode tabs -->
+  <div class="mode-tabs">
+    <button id="modeFrase"     class="mode-tab active">🧩 Armar Frase</button>
+    <button id="modeConversar" class="mode-tab">💬 Conversar con CPU</button>
+  </div>
+
+  <!-- Camera -->
   <div class="video-container">
     <video id="preview" autoplay muted playsinline></video>
     <canvas id="output_canvas" width="640" height="480"></canvas>
   </div>
 
-  <div>
+  <!-- Controls -->
+  <div class="controls">
     <button id="startBtn">Iniciar cámara</button>
-    <button id="recordBtn" disabled>🔴 Grabar Seña</button>
-    <button id="stopBtn" disabled>⏹ Detener y Predecir</button>
+    <button id="recordBtn" disabled>🔴 Grabar</button>
+    <button id="stopBtn"   disabled>⏹ Detener</button>
   </div>
 
-  <div id="result">El sistema está en espera...</div>
+  <!-- Status -->
+  <div id="statusMsg">El sistema está en espera...</div>
+
+  <!-- Sentence builder -->
+  <div class="card">
+    <div class="card-label">Frase construida</div>
+    <div id="sentenceDisplay" class="sentence-words">
+      <span style="color:#9ca3af; font-size:14px">Empieza grabando señas...</span>
+    </div>
+    <div class="sentence-btns">
+      <button id="undoBtn"  disabled>✕ Borrar última</button>
+      <button id="clearBtn" disabled>🗑 Limpiar todo</button>
+    </div>
+  </div>
+
+  <!-- Result panel -->
+  <div id="resultPanel" class="card">
+    <div class="card-label">Seña detectada</div>
+    <div id="resultWord" class="result-word"></div>
+    <div id="resultConf" class="result-conf"></div>
+    <div id="resultProbs" class="result-probs"></div>
+    <div class="result-actions">
+      <button id="acceptBtn">✅ Conservar</button>
+      <button id="retryBtn">🔄 Reintentar</button>
+    </div>
+  </div>
+
+  <!-- Chat section (conversar mode only) -->
+  <div id="chatSection">
+    <button id="sendCpuBtn" disabled>💬 Enviar frase al CPU</button>
+    <div class="conversation" id="conversation">
+      <span class="conv-placeholder">La conversación aparecerá aquí.</span>
+    </div>
+  </div>
 
   <script>
-    const API_URL = "http://127.0.0.1:8000/predict/";
+    const API_PREDICT = "http://127.0.0.1:8000/predict/";
+    const API_CHAT    = "http://127.0.0.1:8000/chat/";
 
-    const preview = document.getElementById("preview");
-    const canvasElement = document.getElementById("output_canvas");
-    const canvasCtx = canvasElement.getContext("2d");
-    
-    const startBtn = document.getElementById("startBtn");
-    const recordBtn = document.getElementById("recordBtn");
-    const stopBtn = document.getElementById("stopBtn");
-    const resultDiv = document.getElementById("result");
+    // ── DOM ──
+    const preview        = document.getElementById("preview");
+    const canvasElement  = document.getElementById("output_canvas");
+    const canvasCtx      = canvasElement.getContext("2d");
+    const startBtn       = document.getElementById("startBtn");
+    const recordBtn      = document.getElementById("recordBtn");
+    const stopBtn        = document.getElementById("stopBtn");
+    const statusMsg      = document.getElementById("statusMsg");
+    const sentenceDisplay= document.getElementById("sentenceDisplay");
+    const undoBtn        = document.getElementById("undoBtn");
+    const clearBtn       = document.getElementById("clearBtn");
+    const resultPanel    = document.getElementById("resultPanel");
+    const resultWord     = document.getElementById("resultWord");
+    const resultConf     = document.getElementById("resultConf");
+    const resultProbs    = document.getElementById("resultProbs");
+    const acceptBtn      = document.getElementById("acceptBtn");
+    const retryBtn       = document.getElementById("retryBtn");
+    const chatSection    = document.getElementById("chatSection");
+    const sendCpuBtn     = document.getElementById("sendCpuBtn");
+    const conversation   = document.getElementById("conversation");
+    const modeFraseBtn   = document.getElementById("modeFrase");
+    const modeConversarBtn = document.getElementById("modeConversar");
 
-    let stream;
-    let mediaRecorder;
-    let recordedChunks = [];
-    let isDrawing = false;
+    // ── State ──
+    let stream, mediaRecorder, recordedChunks = [], isDrawing = false;
+    let mode = "frase";
+    let sentence = [];
+    let lastPrediction = null;
+    let chatHistory = { past_user_inputs: [], generated_responses: [] };
 
-    // --- CONFIGURACIÓN DE MEDIAPIPE VISUAL ---
-    const holistic = new Holistic({locateFile: (file) => {
-      return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
-    }});
-    
+    // ── MediaPipe ──
+    const holistic = new Holistic({
+      locateFile: f => `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${f}`
+    });
     holistic.setOptions({
       modelComplexity: 1,
       smoothLandmarks: true,
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
     });
-
-    holistic.onResults((results) => {
+    holistic.onResults(results => {
       canvasCtx.save();
       canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-      
-      // Dibujar Postura (Cuerpo)
       if (results.poseLandmarks) {
-        drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS, {color: '#00FF00', lineWidth: 2});
-        drawLandmarks(canvasCtx, results.poseLandmarks, {color: '#FF0000', lineWidth: 1});
+        drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS, { color: '#00FF00', lineWidth: 2 });
+        drawLandmarks(canvasCtx, results.poseLandmarks, { color: '#FF0000', lineWidth: 1 });
       }
-      // Dibujar Mano Izquierda
       if (results.leftHandLandmarks) {
-        drawConnectors(canvasCtx, results.leftHandLandmarks, HAND_CONNECTIONS, {color: '#CC0000', lineWidth: 3});
-        drawLandmarks(canvasCtx, results.leftHandLandmarks, {color: '#00FF00', lineWidth: 2});
+        drawConnectors(canvasCtx, results.leftHandLandmarks, HAND_CONNECTIONS, { color: '#CC0000', lineWidth: 3 });
+        drawLandmarks(canvasCtx, results.leftHandLandmarks, { color: '#00FF00', lineWidth: 2 });
       }
-      // Dibujar Mano Derecha
       if (results.rightHandLandmarks) {
-        drawConnectors(canvasCtx, results.rightHandLandmarks, HAND_CONNECTIONS, {color: '#00CC00', lineWidth: 3});
-        drawLandmarks(canvasCtx, results.rightHandLandmarks, {color: '#FF0000', lineWidth: 2});
+        drawConnectors(canvasCtx, results.rightHandLandmarks, HAND_CONNECTIONS, { color: '#00CC00', lineWidth: 3 });
+        drawLandmarks(canvasCtx, results.rightHandLandmarks, { color: '#FF0000', lineWidth: 2 });
       }
       canvasCtx.restore();
     });
 
-    // Bucle para alimentar frames al MediaPipe visual
     async function detectionLoop() {
       if (isDrawing && preview.videoWidth) {
-        // Sincronizar tamaño del canvas con el video
-        canvasElement.width = preview.videoWidth;
+        canvasElement.width  = preview.videoWidth;
         canvasElement.height = preview.videoHeight;
-        await holistic.send({image: preview});
+        await holistic.send({ image: preview });
       }
-      if (isDrawing) {
-        requestAnimationFrame(detectionLoop);
-      }
+      if (isDrawing) requestAnimationFrame(detectionLoop);
     }
-    // -----------------------------------------
 
+    // ── Mode switching ──
+    modeFraseBtn.onclick     = () => setMode("frase");
+    modeConversarBtn.onclick = () => setMode("conversar");
+
+    function setMode(m) {
+      mode = m;
+      modeFraseBtn.classList.toggle("active", m === "frase");
+      modeConversarBtn.classList.toggle("active", m === "conversar");
+      chatSection.classList.toggle("visible", m === "conversar");
+      hideResult();
+      setStatus(m === "frase"
+        ? "Modo Armar Frase — graba señas y construye tu oración."
+        : "Modo Conversar — construye una frase y envíala al CPU.");
+    }
+
+    // ── Sentence ──
+    function renderSentence() {
+      if (sentence.length === 0) {
+        sentenceDisplay.innerHTML = '<span style="color:#9ca3af;font-size:14px">Empieza grabando señas...</span>';
+      } else {
+        sentenceDisplay.innerHTML = sentence
+          .map((w, i) => `<span class="word-chip${i === sentence.length - 1 ? " latest" : ""}">${w}</span>`)
+          .join("");
+      }
+      undoBtn.disabled  = sentence.length === 0;
+      clearBtn.disabled = sentence.length === 0;
+      if (mode === "conversar") sendCpuBtn.disabled = sentence.length === 0;
+    }
+
+    undoBtn.onclick  = () => { sentence.pop(); renderSentence(); };
+    clearBtn.onclick = () => { sentence = []; renderSentence(); };
+
+    // ── Camera ──
     startBtn.onclick = async () => {
+      setStatus("Cargando modelo visual...");
       try {
-        resultDiv.textContent = "Cargando modelo visual... Por favor espera.";
-        
-        stream = await navigator.mediaDevices.getUserMedia({
-          video: { width: 640, height: 480 },
-          audio: false
-        });
-
+        stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 }, audio: false });
         preview.srcObject = stream;
-
-        // Iniciar el dibujado en vivo
-        preview.onloadedmetadata = () => {
-            isDrawing = true;
-            detectionLoop();
-        };
-
+        preview.onloadedmetadata = () => { isDrawing = true; detectionLoop(); };
+        startBtn.disabled  = true;
         recordBtn.disabled = false;
-        startBtn.disabled = true;
-        resultDiv.textContent = "✅ Cámara y esqueleto iniciados. Puedes grabar.";
-      } catch (error) {
-        resultDiv.textContent = "Error al acceder a la cámara: " + error.message;
+        setStatus("Cámara lista. Presiona Grabar para capturar una seña.");
+      } catch (e) {
+        setStatus("Error al acceder a la cámara: " + e.message);
       }
     };
 
     recordBtn.onclick = () => {
       recordedChunks = [];
-
-      mediaRecorder = new MediaRecorder(stream, {
-        mimeType: "video/webm"
-      });
-
-      mediaRecorder.ondataavailable = event => {
-        if (event.data.size > 0) {
-          recordedChunks.push(event.data);
-        }
-      };
-
+      mediaRecorder = new MediaRecorder(stream, { mimeType: "video/webm" });
+      mediaRecorder.ondataavailable = e => { if (e.data.size > 0) recordedChunks.push(e.data); };
       mediaRecorder.onstop = async () => {
-        const blob = new Blob(recordedChunks, {
-          type: "video/webm"
-        });
-
-        await sendVideoToAPI(blob);
+        await sendVideoToAPI(new Blob(recordedChunks, { type: "video/webm" }));
       };
-
       mediaRecorder.start();
-
       recordBtn.disabled = true;
-      stopBtn.disabled = false;
-
-      resultDiv.textContent = "🔴 Grabando seña...";
+      stopBtn.disabled   = false;
+      hideResult();
+      setStatus("🔴 Grabando seña...");
     };
 
     stopBtn.onclick = () => {
       mediaRecorder.stop();
-
       stopBtn.disabled = true;
-      recordBtn.disabled = false;
-
-      resultDiv.textContent = "⏳ Enviando a la API y procesando...";
+      setStatus("⏳ Analizando seña con el modelo...");
     };
 
-    async function sendVideoToAPI(videoBlob) {
-      const formData = new FormData();
-      formData.append("video", videoBlob, "recording.webm");
+    async function sendVideoToAPI(blob) {
+      const form = new FormData();
+      form.append("video", blob, "recording.webm");
+      try {
+        const resp = await fetch(API_PREDICT, { method: "POST", body: form });
+        const data = await resp.json();
+        if (!resp.ok) { setStatus("Error del servidor: " + JSON.stringify(data)); recordBtn.disabled = false; return; }
+        showResult(data);
+      } catch (e) {
+        setStatus("Error de red: " + e.message);
+        recordBtn.disabled = false;
+      }
+    }
+
+    // ── Result display ──
+    function showResult(data) {
+      lastPrediction = data;
+      const isUnknown = data.prediction === "Desconocido";
+
+      resultWord.textContent = data.prediction;
+      resultWord.className   = "result-word" + (isUnknown ? " unknown" : "");
+
+      const conf = data.confidence;
+      const badge = conf >= 75 ? "high" : conf >= 55 ? "mid" : "low";
+      resultConf.innerHTML =
+        `Confianza: <span class="score-badge score-${badge}">${conf}%</span>` +
+        `<span style="margin-left:12px;color:#9ca3af">${data.total_frames_processed} frames</span>`;
+
+      const top3 = Object.entries(data.raw_probabilities)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(([k, v]) => `${k}: ${v}%`)
+        .join("\n");
+      resultProbs.textContent = top3;
+
+      acceptBtn.disabled = isUnknown;
+      resultPanel.classList.add("visible");
+      setStatus(isUnknown
+        ? "No se reconoció con certeza. Puedes reintentar."
+        : `Se detectó "${data.prediction}". ¿Conservas la palabra?`);
+    }
+
+    function hideResult() {
+      resultPanel.classList.remove("visible");
+      lastPrediction = null;
+    }
+
+    acceptBtn.onclick = () => {
+      if (!lastPrediction) return;
+      sentence.push(lastPrediction.prediction);
+      renderSentence();
+      hideResult();
+      recordBtn.disabled = false;
+      setStatus(`"${lastPrediction ? lastPrediction.prediction : ""}" añadida. Graba la siguiente seña.`);
+      lastPrediction = null;
+    };
+
+    retryBtn.onclick = () => {
+      hideResult();
+      recordBtn.disabled = false;
+      setStatus("Reintentando. Graba la seña nuevamente.");
+    };
+
+    // ── Chat ──
+    sendCpuBtn.onclick = async () => {
+      const text = sentence.join(" ");
+      if (!text) return;
+
+      sendCpuBtn.disabled = true;
+      addMessage("user", text);
+      setStatus("⏳ Esperando respuesta del CPU...");
 
       try {
-        const response = await fetch(API_URL, {
+        const resp = await fetch(API_CHAT, {
           method: "POST",
-          body: formData
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sentence: text,
+            past_user_inputs: chatHistory.past_user_inputs,
+            generated_responses: chatHistory.generated_responses
+          })
         });
+        const data = await resp.json();
 
-        const data = await response.json();
-
-        if (!response.ok) {
-          resultDiv.textContent = "Error del Servidor:\n" + JSON.stringify(data, null, 2);
+        if (!resp.ok) {
+          setStatus("Error del CPU: " + data.error);
+          sendCpuBtn.disabled = false;
           return;
         }
 
-        resultDiv.textContent =
-          "Traducción Exitosa 🎯\n\n" +
-          "Palabra: " + data.prediction + "\n" +
-          "Confianza: " + data.confidence + "%\n" +
-          "Frames Analizados: " + data.total_frames_processed + "\n\n" +
-          "Distribución BiLSTM:\n" +
-          JSON.stringify(data.raw_probabilities, null, 2);
+        chatHistory.past_user_inputs  = data.past_user_inputs;
+        chatHistory.generated_responses = data.generated_responses;
 
-      } catch (error) {
-        resultDiv.textContent = "Error de red al enviar el video: " + error.message;
+        addMessage("cpu", data.response);
+        sentence = [];
+        renderSentence();
+        setStatus("Respuesta recibida. Construye tu siguiente frase.");
+      } catch (e) {
+        setStatus("Error de red al contactar CPU: " + e.message);
+        sendCpuBtn.disabled = false;
       }
+    };
+
+    function addMessage(who, text) {
+      const placeholder = conversation.querySelector(".conv-placeholder");
+      if (placeholder) placeholder.remove();
+
+      const wrap   = document.createElement("div");
+      wrap.className = `msg-wrap ${who}`;
+
+      const label  = document.createElement("div");
+      label.className = "msg-label";
+      label.textContent = who === "user" ? "Tú" : "CPU";
+
+      const bubble = document.createElement("div");
+      bubble.className = "msg-bubble";
+      bubble.textContent = text;
+
+      wrap.appendChild(label);
+      wrap.appendChild(bubble);
+      conversation.appendChild(wrap);
+      conversation.scrollTop = conversation.scrollHeight;
     }
+
+    function setStatus(msg) { statusMsg.textContent = msg; }
+
+    // ── Init ──
+    setMode("frase");
+    renderSentence();
   </script>
 </body>
 </html>

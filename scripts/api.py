@@ -32,8 +32,8 @@ app.add_middleware(
 )
 
 # 1. Configuración de Parámetros Globales
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "best_bilstm_model-3.pth")
-CLASSES = ["HOSPITAL", "LAUGH", "MAKE", "ME", "NEED", "READ", "SHOW", "START", "STOP", "TELL", "THINK", "TO", "UNDERSTAND", "WAIT", "WANT", "WRITE"]
+MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "best_bilstm_model-4.pth")
+CLASSES = ["ANSWER", "ASK", "CANCEL", "CHAT", "CLOSE", "FIND", "HELP", "HOSPITAL", "KNOW", "LAUGH", "LIKE", "MAKE", "ME", "NEED", "OPEN", "READ", "SHOW", "START", "STOP", "TELL", "THINK", "TO", "UNDERSTAND", "WAIT", "WANT", "WRITE"]
 SEQUENCE_LENGTH = 30
 FEATURE_DIM = 225
 

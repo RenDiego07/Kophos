@@ -7,3 +7,6 @@ numpy
 matplotlib
 tqdm
 scikit-learn
+fastapi
+uvicorn
+httpx
