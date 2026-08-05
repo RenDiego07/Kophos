@@ -307,15 +307,28 @@
 
   <!-- Chat section (conversar mode only) -->
   <div id="chatSection">
-    <button id="sendCpuBtn" disabled>💬 Enviar frase al CPU</button>
+    <button id="sendCpuBtn" disabled>✨ Reformular frase</button>
+
+    <!-- Suggestion card -->
+    <div id="suggestionCard" class="card" style="display:none; border-left:4px solid #10b981; margin-bottom:14px;">
+      <div class="card-label">Sugerencia de reformulación</div>
+      <div id="rawSentence" style="font-size:12px; color:#9ca3af; margin-bottom:6px;"></div>
+      <div id="suggestionText" style="font-size:1.1rem; font-weight:700; color:#111827; margin-bottom:14px;"></div>
+      <div style="display:flex; gap:8px;">
+        <button id="confirmSuggestionBtn" style="flex:1; background:#16a34a; color:#fff; font-size:14px;">✅ Confirmar y enviar</button>
+        <button id="dismissSuggestionBtn" style="flex:1; background:#6b7280; color:#fff; font-size:14px;">✕ Cancelar</button>
+      </div>
+    </div>
+
     <div class="conversation" id="conversation">
       <span class="conv-placeholder">La conversación aparecerá aquí.</span>
     </div>
   </div>
 
   <script>
-    const API_PREDICT = "http://127.0.0.1:8000/predict/";
-    const API_CHAT    = "http://127.0.0.1:8000/chat/";
+    const API_PREDICT     = "http://127.0.0.1:8000/predict/";
+    const API_CHAT        = "http://127.0.0.1:8000/chat/";
+    const API_REFORMULATE = "http://127.0.0.1:8000/reformulate/";
 
     // ── DOM ──
     const preview        = document.getElementById("preview");
@@ -334,9 +347,14 @@
     const resultProbs    = document.getElementById("resultProbs");
     const acceptBtn      = document.getElementById("acceptBtn");
     const retryBtn       = document.getElementById("retryBtn");
-    const chatSection    = document.getElementById("chatSection");
-    const sendCpuBtn     = document.getElementById("sendCpuBtn");
-    const conversation   = document.getElementById("conversation");
+    const chatSection          = document.getElementById("chatSection");
+    const sendCpuBtn           = document.getElementById("sendCpuBtn");
+    const conversation         = document.getElementById("conversation");
+    const suggestionCard       = document.getElementById("suggestionCard");
+    const rawSentenceEl        = document.getElementById("rawSentence");
+    const suggestionTextEl     = document.getElementById("suggestionText");
+    const confirmSuggestionBtn = document.getElementById("confirmSuggestionBtn");
+    const dismissSuggestionBtn = document.getElementById("dismissSuggestionBtn");
     const modeFraseBtn   = document.getElementById("modeFrase");
     const modeConversarBtn = document.getElementById("modeConversar");
 
@@ -345,7 +363,7 @@
     let mode = "frase";
     let sentence = [];
     let lastPrediction = null;
-    let chatHistory = { past_user_inputs: [], generated_responses: [] };
+    let chatMessages = []; // historial en formato OpenAI [{role, content}]
 
     // ── MediaPipe ──
     const holistic = new Holistic({
@@ -515,43 +533,70 @@
     };
 
     // ── Chat ──
-    sendCpuBtn.onclick = async () => {
-      const text = sentence.join(" ");
-      if (!text) return;
 
+    // Paso 1: reformular la frase con el LLM
+    sendCpuBtn.onclick = async () => {
+      if (!sentence.length) return;
       sendCpuBtn.disabled = true;
-      addMessage("user", text);
-      setStatus("⏳ Esperando respuesta del CPU...");
+      suggestionCard.style.display = "none";
+      setStatus("⏳ Reformulando frase...");
+
+      try {
+        const resp = await fetch(API_REFORMULATE, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ words: sentence })
+        });
+        const data = await resp.json();
+
+        if (!resp.ok) { setStatus("Error: " + data.error); sendCpuBtn.disabled = false; return; }
+
+        rawSentenceEl.textContent    = "Original: " + sentence.join(" ");
+        suggestionTextEl.textContent = data.suggestion;
+        suggestionCard.style.display = "block";
+        setStatus("Revisa la sugerencia y confirma si refleja tu intención.");
+      } catch (e) {
+        setStatus("Error de red: " + e.message);
+        sendCpuBtn.disabled = false;
+      }
+    };
+
+    // Paso 2a: el usuario confirma → enviar al LLM conversacional
+    confirmSuggestionBtn.onclick = async () => {
+      const validated = suggestionTextEl.textContent;
+      suggestionCard.style.display = "none";
+      addMessage("user", validated);
+      setStatus("⏳ Esperando respuesta de Kophos...");
+
+      chatMessages.push({ role: "user", content: validated });
 
       try {
         const resp = await fetch(API_CHAT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            sentence: text,
-            past_user_inputs: chatHistory.past_user_inputs,
-            generated_responses: chatHistory.generated_responses
-          })
+          body: JSON.stringify({ messages: chatMessages })
         });
         const data = await resp.json();
 
-        if (!resp.ok) {
-          setStatus("Error del CPU: " + data.error);
-          sendCpuBtn.disabled = false;
-          return;
-        }
+        if (!resp.ok) { setStatus("Error: " + data.error); sendCpuBtn.disabled = false; return; }
 
-        chatHistory.past_user_inputs  = data.past_user_inputs;
-        chatHistory.generated_responses = data.generated_responses;
-
+        chatMessages.push({ role: "assistant", content: data.response });
         addMessage("cpu", data.response);
         sentence = [];
         renderSentence();
+        sendCpuBtn.disabled = false;
         setStatus("Respuesta recibida. Construye tu siguiente frase.");
       } catch (e) {
-        setStatus("Error de red al contactar CPU: " + e.message);
+        setStatus("Error de red: " + e.message);
         sendCpuBtn.disabled = false;
       }
+    };
+
+    // Paso 2b: el usuario descarta la sugerencia
+    dismissSuggestionBtn.onclick = () => {
+      suggestionCard.style.display = "none";
+      sendCpuBtn.disabled = false;
+      setStatus("Sugerencia descartada. Edita tu frase e inténtalo de nuevo.");
     };
 
     function addMessage(who, text) {
@@ -563,7 +608,7 @@
 
       const label  = document.createElement("div");
       label.className = "msg-label";
-      label.textContent = who === "user" ? "Tú" : "CPU";
+      label.textContent = who === "user" ? "Tú" : "Kophos";
 
       const bubble = document.createElement("div");
       bubble.className = "msg-bubble";

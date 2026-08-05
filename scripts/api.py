@@ -5,14 +5,16 @@ import torch
 import numpy as np
 import mediapipe as mp
 import tempfile
-import httpx
+from openai import OpenAI
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from dotenv import load_dotenv
 from model import BiLSTMSignModel
 
+load_dotenv()  # Cargar variables de entorno desde .env
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = FastAPI(title="Kophos MVP API", description="API de Inferencia para Lenguaje de Señas")
@@ -47,48 +49,74 @@ model.load_state_dict(checkpoint['model_state_dict'])
 model.to(device)
 model.eval()
 
-# 3. Configuración HuggingFace
-HF_TOKEN = os.getenv("HF_TOKEN", "")
-HF_MODEL = os.getenv("HF_MODEL", "facebook/blenderbot-400M-distill")
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL}"
+# 3. Configuración LLM (Llama via HuggingFace Router)
+llm_client = OpenAI(
+    base_url="https://router.huggingface.co/v1",
+    api_key=os.environ["HF_TOKEN"],
+)
+LLM_MODEL = "meta-llama/Llama-3.1-8B-Instruct:novita"
+
+SYSTEM_PROMPT = """You are Kophos, a helpful, empathetic, and natural conversational AI assistant.
+The user is communicating with you through a real-time sign language translation system. The text you receive is the translated output of their signs.
+
+Your goal is to maintain a natural, flowing conversation. You MUST adhere to the following strict rules:
+
+1. NO META-INSTRUCTIONS: NEVER break character to discuss the sign language interface itself. NEVER instruct the user on how to perform physical signs (e.g., absolutely do not say "Can you do the NEED sign", "Point your finger", or "Make a gesture"). Treat the user's input as if they simply typed or spoke it to you.
+2. NATURAL RESPONSES: Respond directly to the meaning and intent of the user's message like a real human assistant would. If they say "I need to go to the hospital", respond with urgency and care (e.g., "I understand. Is it an emergency? Do you need me to call an ambulance?").
+3. LIMITED VOCABULARY AWARENESS: The user is communicating using a very constrained and limited sign language vocabulary (around 15-20 basic words/concepts).
+4. GUIDE THE CONVERSATION: To help the user continue the conversation easily, ALWAYS end your response with a single, highly simplified follow-up question. Formulate your questions so they can be answered with basic concepts (Yes/No, basic needs, or simple actions). Avoid complex open-ended questions.
+
+Act as a true conversational partner, focusing entirely on the context of the chat, not the medium of communication."""
+
+class ChatMessage(BaseModel):
+    role: str
+    content: str
 
 class ChatRequest(BaseModel):
-    sentence: str
-    past_user_inputs: list[str] = []
-    generated_responses: list[str] = []
+    messages: list[ChatMessage]
+
+class ReformulateRequest(BaseModel):
+    words: list[str]
+
+@app.post("/reformulate/")
+async def reformulate(req: ReformulateRequest):
+    if not req.words:
+        return JSONResponse(status_code=400, content={"error": "No hay palabras."})
+
+    raw = " ".join(req.words)
+    completion = llm_client.chat.completions.create(
+        model=LLM_MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "Eres un reformulador de frases para una app de lenguaje de señas mexicano (LSM). "
+                    "El usuario te enviará palabras sueltas detectadas por el sistema (en inglés, en mayúsculas). "
+                    "Tu tarea es convertirlas en una oración natural y gramaticalmente correcta en español. "
+                    "Responde ÚNICAMENTE con la oración reformulada, sin explicaciones ni texto adicional."
+                ),
+            },
+            {"role": "user", "content": raw},
+        ],
+    )
+    suggestion = completion.choices[0].message.content.strip()
+    return {"suggestion": suggestion}
 
 @app.post("/chat/")
-async def chat_with_cpu(req: ChatRequest):
-    if not req.sentence.strip():
-        return JSONResponse(status_code=400, content={"error": "La frase está vacía."})
+async def chat(req: ChatRequest):
+    if not req.messages:
+        return JSONResponse(status_code=400, content={"error": "No hay mensajes."})
 
-    headers = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
-    payload = {
-        "inputs": {
-            "text": req.sentence,
-            "past_user_inputs": req.past_user_inputs,
-            "generated_responses": req.generated_responses,
-        }
-    }
+    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+    messages += [{"role": m.role, "content": m.content} for m in req.messages]
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        resp = await client.post(HF_API_URL, json=payload, headers=headers)
+    completion = llm_client.chat.completions.create(
+        model=LLM_MODEL,
+        messages=messages,
+    )
 
-    if resp.status_code == 503:
-        estimated = resp.json().get("estimated_time", "?")
-        return JSONResponse(status_code=503, content={"error": f"Modelo cargando, intenta en {estimated:.0f}s."})
-
-    if resp.status_code != 200:
-        return JSONResponse(status_code=502, content={"error": f"HuggingFace error {resp.status_code}: {resp.text[:200]}"})
-
-    data = resp.json()
-    generated = data.get("generated_text", "")
-
-    return {
-        "response": generated,
-        "past_user_inputs": req.past_user_inputs + [req.sentence],
-        "generated_responses": req.generated_responses + [generated],
-    }
+    response_text = completion.choices[0].message.content
+    return {"response": response_text}
 
 # 4. Inicializar MediaPipe
 mp_holistic = mp.solutions.holistic
