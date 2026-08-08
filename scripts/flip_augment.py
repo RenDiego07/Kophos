@@ -1,25 +1,31 @@
 """
-Genera versiones volteadas horizontalmente de todos los videos en ASL_15_Classes
-y actualiza asl_15_citizen_index.json con las nuevas entradas.
+Genera versiones volteadas horizontalmente de todos los videos en ASL_34_Classes
+y actualiza asl_34_citizen_index.json con las nuevas entradas.
+También copia los videos volteados a ASL_34_Flat_Videos.
 
 Maneja dos estructuras de carpetas:
-  - Con subsets: ASL_15_Classes/{CLASS}/train|test|val/{id}-{CLASS}.mp4
-  - Sin subsets: ASL_15_Classes/{CLASS}/{id}-{CLASS}.mp4
+  - Con subsets: ASL_34_Classes/{CLASS}/train|test|val/{id}-{CLASS}.mp4
+  - Sin subsets: ASL_34_Classes/{CLASS}/{id}-{CLASS}.mp4
 """
 import os
 import json
 import random
+import shutil
 import cv2
 
 CLASSES = [
-    "HOSPITAL", "LAUGH", "MAKE", "ME", "NEED", "READ", "SHOW", "START",
-    "STOP", "TELL", "THINK", "TO", "UNDERSTAND", "WAIT", "WANT", "WRITE"
+    "ASK", "BAD", "BECOME", "CHAT", "FIND", "FINISH", "GOOD", "HELLO",
+    "HELP", "HOSPITAL", "KNOW", "LAUGH", "LIKE", "MAKE", "ME", "MORE",
+    "NEED", "NO", "PLAY", "PLEASE", "READ", "SHOW", "START", "TELL",
+    "THINK", "TO", "UNDERSTAND", "WANT", "WHERE", "WHO", "WHY", "WRITE",
+    "YES", "YOU"
 ]
 CLASS_INDEX = {cls: i for i, cls in enumerate(CLASSES)}
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
-CLASSES_DIR = os.path.join(DATA_DIR, "ASL_15_Classes")
-INDEX_PATH = os.path.join(DATA_DIR, "asl_15_citizen_index.json")
+CLASSES_DIR = os.path.join(DATA_DIR, "ASL_34_Classes")
+FLAT_DIR = os.path.join(DATA_DIR, "ASL_34_Flat_Videos")
+INDEX_PATH = os.path.join(DATA_DIR, "asl_34_citizen_index.json")
 SUBSETS = ["train", "test", "val"]
 
 
@@ -90,6 +96,8 @@ def collect_videos(cls: str, index: dict) -> list[tuple[str, str]]:
 
 
 def main():
+    os.makedirs(FLAT_DIR, exist_ok=True)
+
     with open(INDEX_PATH) as f:
         index = json.load(f)
 
@@ -125,6 +133,8 @@ def main():
                     "subset": subset,
                     "action": [CLASS_INDEX[cls], 1, -1]
                 }
+                # Copiar al directorio plano
+                shutil.copy2(dst_path, os.path.join(FLAT_DIR, dst_filename))
                 total += 1
             else:
                 errors += 1

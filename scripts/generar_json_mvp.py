@@ -7,16 +7,19 @@ import random
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
 
-SOURCE_DIR = os.path.join(BASE_DIR, "data", "ASL_15_Classes") # Ajusta el nombre si es necesario
-FLAT_VIDEOS_DIR = os.path.join(BASE_DIR, "data", "ASL_15_Flat_Videos")
-OUTPUT_JSON = os.path.join(BASE_DIR, "data", "asl_15_citizen_index.json")
+SOURCE_DIR = os.path.join(BASE_DIR, "data", "ASL_34_Classes")
+FLAT_VIDEOS_DIR = os.path.join(BASE_DIR, "data", "ASL_34_Flat_Videos")
+OUTPUT_JSON = os.path.join(BASE_DIR, "data", "asl_34_citizen_index.json")
 
-# Nuevo mapeo estricto con las 16 clases de tu árbol
+# 34 clases ordenadas alfabéticamente
 CLASS_MAP = {
-    "HOSPITAL": 0, "LAUGH": 1, "MAKE": 2, "ME": 3, "NEED": 4,
-    "READ": 5, "SHOW": 6, "START": 7, "STOP": 8, "TELL": 9,
-    "THINK": 10, "TO": 11, "UNDERSTAND": 12, "WAIT": 13, "WANT": 14,
-    "WRITE": 15
+    "ASK": 0, "BAD": 1, "BECOME": 2, "CHAT": 3, "FIND": 4,
+    "FINISH": 5, "GOOD": 6, "HELLO": 7, "HELP": 8, "HOSPITAL": 9,
+    "KNOW": 10, "LAUGH": 11, "LIKE": 12, "MAKE": 13, "ME": 14,
+    "MORE": 15, "NEED": 16, "NO": 17, "PLAY": 18, "PLEASE": 19,
+    "READ": 20, "SHOW": 21, "START": 22, "TELL": 23, "THINK": 24,
+    "TO": 25, "UNDERSTAND": 26, "WANT": 27, "WHERE": 28, "WHO": 29,
+    "WHY": 30, "WRITE": 31, "YES": 32, "YOU": 33
 }
 
 def aplanar_y_generar_json():

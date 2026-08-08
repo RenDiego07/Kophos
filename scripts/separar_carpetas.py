@@ -7,13 +7,13 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
 
 # Origen: donde están tus videos actualmente
-SOURCE_DIR = os.path.join(BASE_DIR, "data", "raw", "ASL_Citizen", "videos")
+SOURCE_DIR = os.path.join(BASE_DIR, "data", "ASL_14_new_classes")
 
 # Destino: la nueva carpeta organizada para tu MVP
-OUTPUT_DIR = os.path.join(BASE_DIR, "data", "ASL_5_Classes")
+OUTPUT_DIR = os.path.join(BASE_DIR, "data", "ASL_34_Classes")
 
 # 2. Tu léxico definido
-LEXICON = ["MAKE", "LAUGH", "ME", "NEED", "HOSPITAL"]
+LEXICON = ["WHERE", "WHY", "MORE", "PLAY", "NO", "GOOD", "YOU", "HELLO", "PLEASE", "FINISH", "BECOME", "BAD", "YES", "WHO"]
 SUBSETS = ["train", "val", "test"]
 
 def organizar_archivos():
