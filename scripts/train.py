@@ -26,7 +26,7 @@ def train_model(
     epochs: int = 50,
     batch_size: int = 32,
     learning_rate: float = 0.001,
-    num_classes: int = 5  # <-- Nuevo parámetro con valor por defecto de 5
+    num_classes: int = 34
 ):
     # 1. Configuración de Dispositivo
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=50)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=0.001)
-    parser.add_argument("--num_classes", type=int, default=5) # <-- Nuevo argumento CLI
+    parser.add_argument("--num_classes", type=int, default=34)
     args = parser.parse_args()
     
     train_model(
