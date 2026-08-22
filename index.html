@@ -18,13 +18,53 @@
       color: #1f2937;
     }
 
+    /* ── Header ── */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
     h1 {
-      text-align: center;
       font-size: 1.7rem;
       font-weight: 700;
-      margin-bottom: 20px;
       color: #111827;
     }
+
+    /* ── Score counter ── */
+    .score-counter {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 8px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .score-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .score-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #4f46e5;
+      min-width: 40px;
+      text-align: right;
+    }
+    .streak-badge {
+      font-size: 12px;
+      font-weight: 700;
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 20px;
+      padding: 2px 8px;
+      display: none;
+    }
+    .streak-badge.visible { display: inline-block; }
 
     /* ── Mode tabs ── */
     .mode-tabs {
@@ -34,11 +74,11 @@
     }
     .mode-tab {
       flex: 1;
-      padding: 12px;
+      padding: 11px 8px;
       border-radius: 10px;
       border: 2px solid #d1d5db;
       background: #fff;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -64,6 +104,8 @@
     video {
       width: 100%;
       display: block;
+    }
+    #preview {
       transform: scaleX(-1);
     }
     canvas {
@@ -184,6 +226,24 @@
     }
     #retryBtn:hover { background: #4b5563; }
 
+    /* ── Points earned toast ── */
+    .pts-toast {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      animation: fadeUp 1.8s ease forwards;
+    }
+    .pts-toast.high { background: #dcfce7; color: #15803d; }
+    .pts-toast.mid  { background: #fef9c3; color: #854d0e; }
+    @keyframes fadeUp {
+      0%   { opacity: 1; transform: translateY(0); }
+      70%  { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-12px); }
+    }
+
     /* ── Score badge ── */
     .score-badge {
       display: inline-block;
@@ -197,20 +257,98 @@
     .score-mid   { background: #fef9c3; color: #854d0e; }
     .score-low   { background: #fee2e2; color: #991b1b; }
 
+    /* ── Suggested phrases ── */
+    #suggestedPhrasesCard { border-left: 4px solid #10b981; }
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .collapsible-header .toggle-icon {
+      font-size: 12px;
+      color: #9ca3af;
+      transition: transform 0.2s;
+    }
+    .collapsible-header.open .toggle-icon { transform: rotate(180deg); }
+    .collapsible-body { margin-top: 12px; }
+    .collapsible-body.hidden { display: none; }
+
+    .phrase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .phrase-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: #f9fafb;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid #e5e7eb;
+      transition: background 0.15s;
+    }
+    .phrase-item:hover { background: #ede9fe; border-color: #c4b5fd; }
+    .phrase-words {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .phrase-word-chip {
+      background: #ede9fe;
+      color: #4f46e5;
+      border-radius: 14px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .phrase-translation {
+      font-size: 12px;
+      color: #6b7280;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
     /* ── Chat section ── */
     #chatSection { display: none; }
     #chatSection.visible { display: block; }
 
+    .chat-controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      align-items: center;
+    }
     #sendCpuBtn {
-      width: 100%;
+      flex: 1;
       background: #4f46e5;
       color: #fff;
       font-size: 16px;
       padding: 14px;
-      margin-bottom: 14px;
       border-radius: 12px;
     }
     #sendCpuBtn:hover:not(:disabled) { background: #4338ca; }
+
+    .tts-btn {
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 20px;
+      background: #fff;
+      border: 2px solid #d1d5db;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tts-btn.active {
+      background: #ede9fe;
+      border-color: #4f46e5;
+      color: #4f46e5;
+    }
+    .tts-btn:hover { background: #f3f4f6; }
+    .tts-btn.active:hover { background: #ddd6fe; }
 
     .conversation {
       background: #fff;
@@ -253,61 +391,260 @@
       background: #f3f4f6; color: #111827;
       border-bottom-left-radius: 4px;
     }
+
+    /* ── Lexicon section ── */
+    #lexiconSection { display: none; }
+    #lexiconSection.visible { display: block; }
+
+    .lexicon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .lex-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.15s;
+    }
+    .lex-card:hover {
+      border-color: #c4b5fd;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(79,70,229,0.14);
+    }
+    .lex-info {
+      padding: 10px 12px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .lex-word {
+      font-size: 15px;
+      font-weight: 800;
+      color: #4f46e5;
+    }
+    .lex-translation {
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .lex-category {
+      font-size: 10px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .lex-videos {
+      display: flex;
+      gap: 6px;
+      padding: 0 8px 10px;
+    }
+    .lex-thumb {
+      flex: 1;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+    }
+    .lex-thumb:hover .lex-thumb-overlay { opacity: 1; }
+    .lex-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .lex-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(79,70,229,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-size: 22px;
+    }
+    .lex-thumb-label {
+      position: absolute;
+      bottom: 4px;
+      left: 5px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      border-radius: 3px;
+      padding: 1px 5px;
+      pointer-events: none;
+    }
+
+    /* ── Video modal ── */
+    #videoModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.82);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #videoModal.open { display: flex; }
+    .modal-box {
+      background: #1f2937;
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 620px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+    .modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .modal-subtitle {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-left: 10px;
+    }
+    .modal-close {
+      background: #374151;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .modal-close:hover { background: #4b5563; }
+    .modal-video-area {
+      background: #000;
+      position: relative;
+    }
+    #modalVideo {
+      width: 100%;
+      display: block;
+      max-height: 420px;
+      object-fit: contain;
+    }
+    .modal-nav {
+      display: flex;
+      gap: 8px;
+      padding: 12px 18px;
+    }
+    .modal-nav-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #374151;
+      background: transparent;
+      color: #9ca3af;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .modal-nav-btn.active {
+      border-color: #4f46e5;
+      background: #4f46e5;
+      color: #fff;
+    }
+    .modal-nav-btn:hover:not(.active) { border-color: #6b7280; color: #fff; }
   </style>
 </head>
 
 <body>
-  <h1>Kophos MVP — ASL Predictor</h1>
+  <!-- Header with score -->
+  <div class="app-header">
+    <h1>Kophos MVP</h1>
+    <div class="score-counter">
+      <div>
+        <div class="score-label">Puntos</div>
+        <div id="scoreValue" class="score-value">0</div>
+      </div>
+      <span id="streakBadge" class="streak-badge">🔥 x1</span>
+    </div>
+  </div>
 
   <!-- Mode tabs -->
   <div class="mode-tabs">
     <button id="modeFrase"     class="mode-tab active">🧩 Armar Frase</button>
     <button id="modeConversar" class="mode-tab">💬 Conversar con CPU</button>
+    <button id="modeLexicon"   class="mode-tab">📖 Léxico</button>
   </div>
 
-  <!-- Camera -->
-  <div class="video-container">
-    <video id="preview" autoplay muted playsinline></video>
-    <canvas id="output_canvas" width="640" height="480"></canvas>
-  </div>
-
-  <!-- Controls -->
-  <div class="controls">
-    <button id="startBtn">Iniciar cámara</button>
-    <button id="recordBtn" disabled>🔴 Grabar</button>
-    <button id="stopBtn"   disabled>⏹ Detener</button>
-  </div>
-
-  <!-- Status -->
-  <div id="statusMsg">El sistema está en espera...</div>
-
-  <!-- Sentence builder -->
-  <div class="card">
-    <div class="card-label">Frase construida</div>
-    <div id="sentenceDisplay" class="sentence-words">
-      <span style="color:#9ca3af; font-size:14px">Empieza grabando señas...</span>
+  <!-- Camera (hidden in lexicon mode) -->
+  <div id="cameraSection">
+    <div class="video-container">
+      <video id="preview" autoplay muted playsinline></video>
+      <canvas id="output_canvas" width="640" height="480"></canvas>
     </div>
-    <div class="sentence-btns">
-      <button id="undoBtn"  disabled>✕ Borrar última</button>
-      <button id="clearBtn" disabled>🗑 Limpiar todo</button>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="startBtn">Iniciar cámara</button>
+      <button id="recordBtn" disabled>🔴 Grabar</button>
+      <button id="stopBtn"   disabled>⏹ Detener</button>
+    </div>
+
+    <!-- Status -->
+    <div id="statusMsg">El sistema está en espera...</div>
+
+    <!-- Sentence builder -->
+    <div class="card">
+      <div class="card-label">Frase construida</div>
+      <div id="sentenceDisplay" class="sentence-words">
+        <span style="color:#9ca3af; font-size:14px">Empieza grabando señas...</span>
+      </div>
+      <div class="sentence-btns">
+        <button id="undoBtn"  disabled>✕ Borrar última</button>
+        <button id="clearBtn" disabled>🗑 Limpiar todo</button>
+      </div>
+    </div>
+
+    <!-- Result panel -->
+    <div id="resultPanel" class="card">
+      <div class="card-label">Seña detectada</div>
+      <div id="resultWord" class="result-word"></div>
+      <div id="resultConf" class="result-conf"></div>
+      <div id="resultProbs" class="result-probs"></div>
+      <div class="result-actions">
+        <button id="acceptBtn">✅ Conservar</button>
+        <button id="retryBtn">🔄 Reintentar</button>
+      </div>
     </div>
   </div>
 
-  <!-- Result panel -->
-  <div id="resultPanel" class="card">
-    <div class="card-label">Seña detectada</div>
-    <div id="resultWord" class="result-word"></div>
-    <div id="resultConf" class="result-conf"></div>
-    <div id="resultProbs" class="result-probs"></div>
-    <div class="result-actions">
-      <button id="acceptBtn">✅ Conservar</button>
-      <button id="retryBtn">🔄 Reintentar</button>
+  <!-- Suggested phrases (frase mode only) -->
+  <div id="suggestedPhrasesCard" class="card" style="display:none;">
+    <div class="collapsible-header" id="phrasesToggle">
+      <div class="card-label" style="margin-bottom:0">Frases sugeridas para practicar</div>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div id="phrasesBody" class="collapsible-body hidden">
+      <div class="phrase-list" id="phraseList"></div>
     </div>
   </div>
 
   <!-- Chat section (conversar mode only) -->
   <div id="chatSection">
-    <button id="sendCpuBtn" disabled>✨ Reformular frase</button>
+    <div class="chat-controls">
+      <button id="sendCpuBtn" disabled>✨ Reformular y enviar</button>
+      <button id="ttsBtn" class="tts-btn" title="Activar/desactivar audio">🔇</button>
+    </div>
 
     <!-- Suggestion card -->
     <div id="suggestionCard" class="card" style="display:none; border-left:4px solid #10b981; margin-bottom:14px;">
@@ -325,28 +662,113 @@
     </div>
   </div>
 
+  <!-- Lexicon section -->
+  <div id="lexiconSection">
+    <div class="card">
+      <div class="card-label">Vocabulario del sistema — 34 palabras reconocidas</div>
+      <p style="font-size:13px; color:#6b7280; margin-bottom:14px;">
+        Estas son todas las señas que el modelo puede identificar. Haz clic en cualquier miniatura para ver el video completo.
+      </p>
+      <div class="lexicon-grid" id="lexiconGrid"></div>
+    </div>
+  </div>
+
+  <!-- Video modal -->
+  <div id="videoModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span id="modalTitle" class="modal-title"></span>
+          <span id="modalSubtitle" class="modal-subtitle"></span>
+        </div>
+        <button class="modal-close" id="modalClose">✕ Cerrar</button>
+      </div>
+      <div class="modal-video-area">
+        <video id="modalVideo" controls autoplay loop muted playsinline></video>
+      </div>
+      <div class="modal-nav" id="modalNav"></div>
+    </div>
+  </div>
+
   <script>
     const API_PREDICT     = "http://127.0.0.1:8000/predict/";
     const API_CHAT        = "http://127.0.0.1:8000/chat/";
     const API_REFORMULATE = "http://127.0.0.1:8000/reformulate/";
 
+    // ── Lexicon data ──
+    const LEXICON = [
+      { word: "ASK",        es: "Preguntar",   cat: "Acción" },
+      { word: "BAD",        es: "Malo",        cat: "Descriptor" },
+      { word: "BECOME",     es: "Convertirse", cat: "Acción" },
+      { word: "CHAT",       es: "Conversar",   cat: "Acción" },
+      { word: "FIND",       es: "Encontrar",   cat: "Acción" },
+      { word: "FINISH",     es: "Terminar",    cat: "Acción" },
+      { word: "GOOD",       es: "Bueno",       cat: "Descriptor" },
+      { word: "HELLO",      es: "Hola",        cat: "Saludo" },
+      { word: "HELP",       es: "Ayuda",       cat: "Acción" },
+      { word: "HOSPITAL",   es: "Hospital",    cat: "Lugar" },
+      { word: "KNOW",       es: "Saber",       cat: "Acción" },
+      { word: "LAUGH",      es: "Reír",        cat: "Acción" },
+      { word: "LIKE",       es: "Gustar",      cat: "Acción" },
+      { word: "MAKE",       es: "Hacer",       cat: "Acción" },
+      { word: "ME",         es: "Yo",          cat: "Pronombre" },
+      { word: "MORE",       es: "Más",         cat: "Descriptor" },
+      { word: "NEED",       es: "Necesitar",   cat: "Acción" },
+      { word: "NO",         es: "No",          cat: "Respuesta" },
+      { word: "PLAY",       es: "Jugar",       cat: "Acción" },
+      { word: "PLEASE",     es: "Por favor",   cat: "Cortesía" },
+      { word: "READ",       es: "Leer",        cat: "Acción" },
+      { word: "SHOW",       es: "Mostrar",     cat: "Acción" },
+      { word: "START",      es: "Empezar",     cat: "Acción" },
+      { word: "TELL",       es: "Decir",       cat: "Acción" },
+      { word: "THINK",      es: "Pensar",      cat: "Acción" },
+      { word: "TO",         es: "A / Para",    cat: "Conector" },
+      { word: "UNDERSTAND", es: "Entender",    cat: "Acción" },
+      { word: "WANT",       es: "Querer",      cat: "Acción" },
+      { word: "WHERE",      es: "Dónde",       cat: "Pregunta" },
+      { word: "WHO",        es: "Quién",       cat: "Pregunta" },
+      { word: "WHY",        es: "Por qué",     cat: "Pregunta" },
+      { word: "WRITE",      es: "Escribir",    cat: "Acción" },
+      { word: "YES",        es: "Sí",          cat: "Respuesta" },
+      { word: "YOU",        es: "Tú",          cat: "Pronombre" },
+    ];
+
+    // ── Suggested phrases ──
+    const SUGGESTED_PHRASES = [
+      { words: ["HELLO", "YOU"],             es: "¡Hola! ¿Tú?" },
+      { words: ["ME", "NEED", "HELP"],       es: "Necesito ayuda" },
+      { words: ["WHERE", "HOSPITAL"],        es: "¿Dónde está el hospital?" },
+      { words: ["ME", "WANT", "MORE"],       es: "Quiero más" },
+      { words: ["PLEASE", "HELP", "ME"],     es: "Por favor ayúdame" },
+      { words: ["YOU", "UNDERSTAND"],        es: "¿Entiendes?" },
+      { words: ["ME", "LIKE", "PLAY"],       es: "Me gusta jugar" },
+      { words: ["ME", "THINK", "NO"],        es: "Creo que no" },
+      { words: ["START", "CHAT"],            es: "Empezar a conversar" },
+      { words: ["TELL", "ME", "MORE"],       es: "Dime más" },
+      { words: ["YOU", "KNOW", "WHO"],       es: "¿Sabes quién?" },
+      { words: ["ME", "NEED", "FIND", "HELP"], es: "Necesito encontrar ayuda" },
+      { words: ["GOOD", "YOU"],              es: "¡Qué bueno, tú!" },
+      { words: ["WHY", "NO"],               es: "¿Por qué no?" },
+      { words: ["ME", "WANT", "TO", "KNOW"], es: "Quiero saber" },
+    ];
+
     // ── DOM ──
-    const preview        = document.getElementById("preview");
-    const canvasElement  = document.getElementById("output_canvas");
-    const canvasCtx      = canvasElement.getContext("2d");
-    const startBtn       = document.getElementById("startBtn");
-    const recordBtn      = document.getElementById("recordBtn");
-    const stopBtn        = document.getElementById("stopBtn");
-    const statusMsg      = document.getElementById("statusMsg");
-    const sentenceDisplay= document.getElementById("sentenceDisplay");
-    const undoBtn        = document.getElementById("undoBtn");
-    const clearBtn       = document.getElementById("clearBtn");
-    const resultPanel    = document.getElementById("resultPanel");
-    const resultWord     = document.getElementById("resultWord");
-    const resultConf     = document.getElementById("resultConf");
-    const resultProbs    = document.getElementById("resultProbs");
-    const acceptBtn      = document.getElementById("acceptBtn");
-    const retryBtn       = document.getElementById("retryBtn");
+    const preview              = document.getElementById("preview");
+    const canvasElement        = document.getElementById("output_canvas");
+    const canvasCtx            = canvasElement.getContext("2d");
+    const startBtn             = document.getElementById("startBtn");
+    const recordBtn            = document.getElementById("recordBtn");
+    const stopBtn              = document.getElementById("stopBtn");
+    const statusMsg            = document.getElementById("statusMsg");
+    const sentenceDisplay      = document.getElementById("sentenceDisplay");
+    const undoBtn              = document.getElementById("undoBtn");
+    const clearBtn             = document.getElementById("clearBtn");
+    const resultPanel          = document.getElementById("resultPanel");
+    const resultWord           = document.getElementById("resultWord");
+    const resultConf           = document.getElementById("resultConf");
+    const resultProbs          = document.getElementById("resultProbs");
+    const acceptBtn            = document.getElementById("acceptBtn");
+    const retryBtn             = document.getElementById("retryBtn");
     const chatSection          = document.getElementById("chatSection");
     const sendCpuBtn           = document.getElementById("sendCpuBtn");
     const conversation         = document.getElementById("conversation");
@@ -355,15 +777,195 @@
     const suggestionTextEl     = document.getElementById("suggestionText");
     const confirmSuggestionBtn = document.getElementById("confirmSuggestionBtn");
     const dismissSuggestionBtn = document.getElementById("dismissSuggestionBtn");
-    const modeFraseBtn   = document.getElementById("modeFrase");
-    const modeConversarBtn = document.getElementById("modeConversar");
+    const modeFraseBtn         = document.getElementById("modeFrase");
+    const modeConversarBtn     = document.getElementById("modeConversar");
+    const modeLexiconBtn       = document.getElementById("modeLexicon");
+    const lexiconSection       = document.getElementById("lexiconSection");
+    const cameraSection        = document.getElementById("cameraSection");
+    const suggestedPhrasesCard = document.getElementById("suggestedPhrasesCard");
+    const scoreValueEl         = document.getElementById("scoreValue");
+    const streakBadgeEl        = document.getElementById("streakBadge");
+    const ttsBtn               = document.getElementById("ttsBtn");
+    const phrasesToggle        = document.getElementById("phrasesToggle");
+    const phrasesBody          = document.getElementById("phrasesBody");
 
     // ── State ──
     let stream, mediaRecorder, recordedChunks = [], isDrawing = false;
     let mode = "frase";
     let sentence = [];
     let lastPrediction = null;
-    let chatMessages = []; // historial en formato OpenAI [{role, content}]
+    let chatMessages = [];
+    let score = 0;
+    let streak = 0;
+    let ttsEnabled = false;
+
+    // ── Build lexicon grid ──
+    const API_VIDEO = "http://127.0.0.1:8000/lexicon";
+
+    // ── Modal logic ──
+    const videoModal  = document.getElementById("videoModal");
+    const modalVideo  = document.getElementById("modalVideo");
+    const modalTitle  = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const modalNav    = document.getElementById("modalNav");
+    const modalClose  = document.getElementById("modalClose");
+
+    let currentModalWord = null;
+    let currentModalIndex = 0;
+
+    function openModal(word, es, index) {
+      currentModalWord  = word;
+      currentModalIndex = index;
+      modalTitle.textContent    = word;
+      modalSubtitle.textContent = `— ${es}`;
+      modalVideo.src = `${API_VIDEO}/${word}/video/${index}`;
+      modalVideo.muted = false;
+      modalVideo.play();
+
+      // nav buttons
+      modalNav.innerHTML = "";
+      [0, 1].forEach(i => {
+        const btn = document.createElement("button");
+        btn.className = "modal-nav-btn" + (i === index ? " active" : "");
+        btn.textContent = `Ejemplo ${i + 1}`;
+        btn.onclick = () => switchModalVideo(i);
+        modalNav.appendChild(btn);
+      });
+
+      videoModal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function switchModalVideo(index) {
+      currentModalIndex = index;
+      modalVideo.src = `${API_VIDEO}/${currentModalWord}/video/${index}`;
+      modalVideo.play();
+      modalNav.querySelectorAll(".modal-nav-btn").forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+      });
+    }
+
+    function closeModal() {
+      videoModal.classList.remove("open");
+      modalVideo.pause();
+      modalVideo.src = "";
+      document.body.style.overflow = "";
+    }
+
+    modalClose.onclick = closeModal;
+    videoModal.onclick = (e) => { if (e.target === videoModal) closeModal(); };
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    // ── Build lexicon grid ──
+    const lexiconGrid = document.getElementById("lexiconGrid");
+    LEXICON.forEach(({ word, es, cat }) => {
+      const card = document.createElement("div");
+      card.className = "lex-card";
+
+      const thumbsHTML = [0, 1].map(i => `
+        <div class="lex-thumb" data-word="${word}" data-es="${es}" data-index="${i}">
+          <video src="${API_VIDEO}/${word}/video/${i}" muted loop playsinline preload="metadata"></video>
+          <div class="lex-thumb-overlay">▶</div>
+          <span class="lex-thumb-label">Ejemplo ${i + 1}</span>
+        </div>
+      `).join("");
+
+      card.innerHTML = `
+        <div class="lex-info">
+          <div class="lex-word">${word}</div>
+          <div class="lex-translation">${es}</div>
+          <div class="lex-category">${cat}</div>
+        </div>
+        <div class="lex-videos">${thumbsHTML}</div>
+      `;
+
+      // hover preview + click to open modal
+      card.querySelectorAll(".lex-thumb").forEach(thumb => {
+        const vid = thumb.querySelector("video");
+        thumb.onmouseenter = () => vid.play();
+        thumb.onmouseleave = () => { vid.pause(); vid.currentTime = 0; };
+        thumb.onclick = () => openModal(
+          thumb.dataset.word,
+          thumb.dataset.es,
+          parseInt(thumb.dataset.index)
+        );
+      });
+
+      lexiconGrid.appendChild(card);
+    });
+
+    // ── Build suggested phrases ──
+    const phraseList = document.getElementById("phraseList");
+    SUGGESTED_PHRASES.forEach(({ words, es }) => {
+      const item = document.createElement("div");
+      item.className = "phrase-item";
+      item.title = "Clic para cargar esta frase";
+      item.innerHTML = `
+        <div class="phrase-words">
+          ${words.map(w => `<span class="phrase-word-chip">${w}</span>`).join("")}
+        </div>
+        <span class="phrase-translation">${es}</span>
+      `;
+      item.onclick = () => {
+        sentence = [...words];
+        renderSentence();
+        setStatus(`Frase cargada: "${es}". Graba cada seña para construirla.`);
+        // collapse panel after loading
+        phrasesBody.classList.add("hidden");
+        phrasesToggle.classList.remove("open");
+      };
+      phraseList.appendChild(item);
+    });
+
+    // ── Collapsible phrases ──
+    phrasesToggle.onclick = () => {
+      const isOpen = phrasesToggle.classList.toggle("open");
+      phrasesBody.classList.toggle("hidden", !isOpen);
+    };
+
+    // ── TTS ──
+    ttsBtn.onclick = () => {
+      ttsEnabled = !ttsEnabled;
+      ttsBtn.textContent = ttsEnabled ? "🔊" : "🔇";
+      ttsBtn.classList.toggle("active", ttsEnabled);
+    };
+
+    function speak(text) {
+      if (!ttsEnabled || !window.speechSynthesis) return;
+      speechSynthesis.cancel();
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.lang = "es-ES";
+      utt.rate = 0.95;
+      speechSynthesis.speak(utt);
+    }
+
+    // ── Scoring ──
+    function addPoints(confidence) {
+      let pts = 0;
+      let grade = "";
+      if (confidence >= 75) { pts = 10; grade = "high"; streak++; }
+      else if (confidence >= 55) { pts = 5;  grade = "mid";  streak = Math.max(streak, 1); }
+      else { streak = 0; return; }
+
+      if (streak >= 3) pts = Math.round(pts * 1.5); // streak bonus
+
+      score += pts;
+      scoreValueEl.textContent = score;
+
+      if (streak >= 2) {
+        streakBadgeEl.textContent = `🔥 x${streak}`;
+        streakBadgeEl.classList.add("visible");
+      } else {
+        streakBadgeEl.classList.remove("visible");
+      }
+
+      // toast
+      const toast = document.createElement("span");
+      toast.className = `pts-toast ${grade}`;
+      toast.textContent = `+${pts} pts`;
+      scoreValueEl.parentElement.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
 
     // ── MediaPipe ──
     const holistic = new Holistic({
@@ -405,16 +1007,34 @@
     // ── Mode switching ──
     modeFraseBtn.onclick     = () => setMode("frase");
     modeConversarBtn.onclick = () => setMode("conversar");
+    modeLexiconBtn.onclick   = () => setMode("lexicon");
 
     function setMode(m) {
       mode = m;
-      modeFraseBtn.classList.toggle("active", m === "frase");
-      modeConversarBtn.classList.toggle("active", m === "conversar");
-      chatSection.classList.toggle("visible", m === "conversar");
+      modeFraseBtn.classList.toggle("active",     m === "frase");
+      modeConversarBtn.classList.toggle("active",  m === "conversar");
+      modeLexiconBtn.classList.toggle("active",    m === "lexicon");
+
+      const showCamera = m !== "lexicon";
+      cameraSection.style.display = showCamera ? "" : "none";
+
+      chatSection.classList.toggle("visible",    m === "conversar");
+      lexiconSection.classList.toggle("visible", m === "lexicon");
+      suggestedPhrasesCard.style.display = m === "frase" ? "" : "none";
+
       hideResult();
-      setStatus(m === "frase"
-        ? "Modo Armar Frase — graba señas y construye tu oración."
-        : "Modo Conversar — construye una frase y envíala al CPU.");
+
+      // Si la cámara ya fue iniciada y no hay grabación activa, reactivar el botón de grabar
+      if (showCamera && stream && (!mediaRecorder || mediaRecorder.state === "inactive")) {
+        recordBtn.disabled = false;
+        stopBtn.disabled   = true;
+      }
+
+      if (m === "frase") {
+        setStatus("Modo Armar Frase — graba señas y construye tu oración.");
+      } else if (m === "conversar") {
+        setStatus("Modo Conversar — construye una frase y envíala al CPU.");
+      }
     }
 
     // ── Sentence ──
@@ -432,7 +1052,7 @@
     }
 
     undoBtn.onclick  = () => { sentence.pop(); renderSentence(); };
-    clearBtn.onclick = () => { sentence = []; renderSentence(); };
+    clearBtn.onclick = () => { sentence = []; streak = 0; streakBadgeEl.classList.remove("visible"); renderSentence(); };
 
     // ── Camera ──
     startBtn.onclick = async () => {
@@ -518,23 +1138,24 @@
 
     acceptBtn.onclick = () => {
       if (!lastPrediction) return;
+      addPoints(lastPrediction.confidence);
       sentence.push(lastPrediction.prediction);
       renderSentence();
       hideResult();
       recordBtn.disabled = false;
-      setStatus(`"${lastPrediction ? lastPrediction.prediction : ""}" añadida. Graba la siguiente seña.`);
+      setStatus(`"${lastPrediction.prediction}" añadida. Graba la siguiente seña.`);
       lastPrediction = null;
     };
 
     retryBtn.onclick = () => {
+      streak = 0;
+      streakBadgeEl.classList.remove("visible");
       hideResult();
       recordBtn.disabled = false;
       setStatus("Reintentando. Graba la seña nuevamente.");
     };
 
     // ── Chat ──
-
-    // Paso 1: reformular la frase con el LLM
     sendCpuBtn.onclick = async () => {
       if (!sentence.length) return;
       sendCpuBtn.disabled = true;
@@ -548,7 +1169,6 @@
           body: JSON.stringify({ words: sentence })
         });
         const data = await resp.json();
-
         if (!resp.ok) { setStatus("Error: " + data.error); sendCpuBtn.disabled = false; return; }
 
         rawSentenceEl.textContent    = "Original: " + sentence.join(" ");
@@ -561,7 +1181,6 @@
       }
     };
 
-    // Paso 2a: el usuario confirma → enviar al LLM conversacional
     confirmSuggestionBtn.onclick = async () => {
       const validated = suggestionTextEl.textContent;
       suggestionCard.style.display = "none";
@@ -577,11 +1196,11 @@
           body: JSON.stringify({ messages: chatMessages })
         });
         const data = await resp.json();
-
         if (!resp.ok) { setStatus("Error: " + data.error); sendCpuBtn.disabled = false; return; }
 
         chatMessages.push({ role: "assistant", content: data.response });
         addMessage("cpu", data.response);
+        speak(data.response);
         sentence = [];
         renderSentence();
         sendCpuBtn.disabled = false;
@@ -592,7 +1211,6 @@
       }
     };
 
-    // Paso 2b: el usuario descarta la sugerencia
     dismissSuggestionBtn.onclick = () => {
       suggestionCard.style.display = "none";
       sendCpuBtn.disabled = false;
