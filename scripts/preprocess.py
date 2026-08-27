@@ -13,6 +13,16 @@ import numpy as np
 from tqdm import tqdm
 import mediapipe as mp
 
+# mp.solutions fue eliminado en mediapipe >= 1.0.0
+_mp_version = tuple(int(x) for x in mp.__version__.split(".")[:2])
+if _mp_version >= (1, 0):
+    raise RuntimeError(
+        f"mediapipe {mp.__version__} no es compatible (solutions API eliminada en 1.x).\n"
+        "Instala la versión correcta con:\n"
+        "  pip install 'mediapipe>=0.10.30,<1.0.0' --force-reinstall --no-cache-dir\n"
+        "Luego reinicia el runtime de Colab y vuelve a ejecutar."
+    )
+
 SEQUENCE_LENGTH = 30
 FEATURE_DIM = 225
 
