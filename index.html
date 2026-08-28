@@ -665,7 +665,7 @@
   <!-- Lexicon section -->
   <div id="lexiconSection">
     <div class="card">
-      <div class="card-label">Vocabulario del sistema — 34 palabras reconocidas</div>
+      <div class="card-label">Vocabulario del sistema — 29 palabras reconocidas</div>
       <p style="font-size:13px; color:#6b7280; margin-bottom:14px;">
         Estas son todas las señas que el modelo puede identificar. Haz clic en cualquier miniatura para ver el video completo.
       </p>
@@ -697,59 +697,52 @@
 
     // ── Lexicon data ──
     const LEXICON = [
-      { word: "ASK",        es: "Preguntar",   cat: "Acción" },
-      { word: "BAD",        es: "Malo",        cat: "Descriptor" },
-      { word: "BECOME",     es: "Convertirse", cat: "Acción" },
-      { word: "CHAT",       es: "Conversar",   cat: "Acción" },
-      { word: "FIND",       es: "Encontrar",   cat: "Acción" },
-      { word: "FINISH",     es: "Terminar",    cat: "Acción" },
-      { word: "GOOD",       es: "Bueno",       cat: "Descriptor" },
-      { word: "HELLO",      es: "Hola",        cat: "Saludo" },
-      { word: "HELP",       es: "Ayuda",       cat: "Acción" },
-      { word: "HOSPITAL",   es: "Hospital",    cat: "Lugar" },
-      { word: "KNOW",       es: "Saber",       cat: "Acción" },
-      { word: "LAUGH",      es: "Reír",        cat: "Acción" },
-      { word: "LIKE",       es: "Gustar",      cat: "Acción" },
-      { word: "MAKE",       es: "Hacer",       cat: "Acción" },
-      { word: "ME",         es: "Yo",          cat: "Pronombre" },
-      { word: "MORE",       es: "Más",         cat: "Descriptor" },
-      { word: "NEED",       es: "Necesitar",   cat: "Acción" },
-      { word: "NO",         es: "No",          cat: "Respuesta" },
-      { word: "PLAY",       es: "Jugar",       cat: "Acción" },
-      { word: "PLEASE",     es: "Por favor",   cat: "Cortesía" },
-      { word: "READ",       es: "Leer",        cat: "Acción" },
-      { word: "SHOW",       es: "Mostrar",     cat: "Acción" },
-      { word: "START",      es: "Empezar",     cat: "Acción" },
-      { word: "TELL",       es: "Decir",       cat: "Acción" },
-      { word: "THINK",      es: "Pensar",      cat: "Acción" },
-      { word: "TO",         es: "A / Para",    cat: "Conector" },
-      { word: "UNDERSTAND", es: "Entender",    cat: "Acción" },
-      { word: "WANT",       es: "Querer",      cat: "Acción" },
-      { word: "WHERE",      es: "Dónde",       cat: "Pregunta" },
-      { word: "WHO",        es: "Quién",       cat: "Pregunta" },
-      { word: "WHY",        es: "Por qué",     cat: "Pregunta" },
-      { word: "WRITE",      es: "Escribir",    cat: "Acción" },
-      { word: "YES",        es: "Sí",          cat: "Respuesta" },
-      { word: "YOU",        es: "Tú",          cat: "Pronombre" },
+      { word: "BAD",      es: "Malo",        cat: "Descriptor" },
+      { word: "BECOME",   es: "Convertirse", cat: "Acción" },
+      { word: "FIND",     es: "Encontrar",   cat: "Acción" },
+      { word: "FINISH",   es: "Terminar",    cat: "Acción" },
+      { word: "GOOD",     es: "Bueno",       cat: "Descriptor" },
+      { word: "HELLO",    es: "Hola",        cat: "Saludo" },
+      { word: "HELP",     es: "Ayuda",       cat: "Acción" },
+      { word: "HOSPITAL", es: "Hospital",    cat: "Lugar" },
+      { word: "KNOW",     es: "Saber",       cat: "Acción" },
+      { word: "LAUGH",    es: "Reír",        cat: "Acción" },
+      { word: "LIKE",     es: "Gustar",      cat: "Acción" },
+      { word: "MAKE",     es: "Hacer",       cat: "Acción" },
+      { word: "ME",       es: "Yo",          cat: "Pronombre" },
+      { word: "MORE",     es: "Más",         cat: "Descriptor" },
+      { word: "NEED",     es: "Necesitar",   cat: "Acción" },
+      { word: "NO",       es: "No",          cat: "Respuesta" },
+      { word: "PLAY",     es: "Jugar",       cat: "Acción" },
+      { word: "PLEASE",   es: "Por favor",   cat: "Cortesía" },
+      { word: "READ",     es: "Leer",        cat: "Acción" },
+      { word: "SHOW",     es: "Mostrar",     cat: "Acción" },
+      { word: "START",    es: "Empezar",     cat: "Acción" },
+      { word: "TELL",     es: "Decir",       cat: "Acción" },
+      { word: "THINK",    es: "Pensar",      cat: "Acción" },
+      { word: "WANT",     es: "Querer",      cat: "Acción" },
+      { word: "WHERE",    es: "Dónde",       cat: "Pregunta" },
+      { word: "WHO",      es: "Quién",       cat: "Pregunta" },
+      { word: "WHY",      es: "Por qué",     cat: "Pregunta" },
+      { word: "YES",      es: "Sí",          cat: "Respuesta" },
+      { word: "YOU",      es: "Tú",          cat: "Pronombre" },
     ];
 
     // ── Suggested phrases ──
     const SUGGESTED_PHRASES = [
-      { words: ["HELLO", "YOU"],             es: "¡Hola! ¿Tú?" },
-      { words: ["ME", "NEED", "HELP"],       es: "Necesito ayuda" },
-      { words: ["WHERE", "HOSPITAL"],        es: "¿Dónde está el hospital?" },
-      { words: ["ME", "WANT", "MORE"],       es: "Quiero más" },
-      { words: ["PLEASE", "HELP", "ME"],     es: "Por favor ayúdame" },
-      { words: ["YOU", "UNDERSTAND"],        es: "¿Entiendes?" },
-      { words: ["ME", "LIKE", "PLAY"],       es: "Me gusta jugar" },
-      { words: ["ME", "THINK", "NO"],        es: "Creo que no" },
-      { words: ["START", "CHAT"],            es: "Empezar a conversar" },
-      { words: ["TELL", "ME", "MORE"],       es: "Dime más" },
-      { words: ["YOU", "KNOW", "WHO"],       es: "¿Sabes quién?" },
+      { words: ["HELLO", "YOU"],               es: "¡Hola! ¿Tú?" },
+      { words: ["ME", "NEED", "HELP"],         es: "Necesito ayuda" },
+      { words: ["WHERE", "HOSPITAL"],          es: "¿Dónde está el hospital?" },
+      { words: ["ME", "WANT", "MORE"],         es: "Quiero más" },
+      { words: ["PLEASE", "HELP", "ME"],       es: "Por favor ayúdame" },
+      { words: ["ME", "LIKE", "PLAY"],         es: "Me gusta jugar" },
+      { words: ["ME", "THINK", "NO"],          es: "Creo que no" },
+      { words: ["TELL", "ME", "MORE"],         es: "Dime más" },
+      { words: ["YOU", "KNOW", "WHO"],         es: "¿Sabes quién?" },
       { words: ["ME", "NEED", "FIND", "HELP"], es: "Necesito encontrar ayuda" },
-      { words: ["GOOD", "YOU"],              es: "¡Qué bueno, tú!" },
-      { words: ["WHY", "NO"],               es: "¿Por qué no?" },
-      { words: ["ME", "WANT", "TO", "KNOW"], es: "Quiero saber" },
+      { words: ["GOOD", "YOU"],                es: "¡Qué bueno, tú!" },
+      { words: ["WHY", "NO"],                  es: "¿Por qué no?" },
+      { words: ["ME", "WANT", "KNOW"],         es: "Quiero saber" },
     ];
 
     // ── DOM ──
@@ -1166,7 +1159,7 @@
         const resp = await fetch(API_REFORMULATE, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ words: sentence })
+          body: JSON.stringify({ words: sentence, context: chatMessages })
         });
         const data = await resp.json();
         if (!resp.ok) { setStatus("Error: " + data.error); sendCpuBtn.disabled = false; return; }
