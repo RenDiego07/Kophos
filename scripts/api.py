@@ -36,15 +36,14 @@ app.add_middleware(
 
 # 1. Configuración de Parámetros Globales
 ROOT_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(ROOT_DIR, "models", "best_bilstm_model-5.pth")
+MODEL_PATH = os.path.join(ROOT_DIR, "models", "best_bilstm_model-6.pth")
 DATA_CLASSES_DIR  = os.path.join(ROOT_DIR, "data", "ASL_34_Classes")
 DATA_FLAT_DIR     = os.path.join(ROOT_DIR, "data", "ASL_34_Flat_Videos")
 CLASSES = [
-    "ASK", "BAD", "BECOME", "CHAT", "FIND", "FINISH", "GOOD", "HELLO",
-    "HELP", "HOSPITAL", "KNOW", "LAUGH", "LIKE", "MAKE", "ME", "MORE",
-    "NEED", "NO", "PLAY", "PLEASE", "READ", "SHOW", "START", "TELL",
-    "THINK", "TO", "UNDERSTAND", "WANT", "WHERE", "WHO", "WHY", "WRITE",
-    "YES", "YOU"
+    "BAD", "BECOME", "FIND", "FINISH", "GOOD", "HELLO", "HELP", "HOSPITAL",
+    "KNOW", "LAUGH", "LIKE", "MAKE", "ME", "MORE", "NEED", "NO",
+    "PLAY", "PLEASE", "READ", "SHOW", "START", "TELL", "THINK", "WANT",
+    "WHERE", "WHO", "WHY", "YES", "YOU"
 ]
 SEQUENCE_LENGTH = 30
 FEATURE_DIM = 225
@@ -73,7 +72,7 @@ Your goal is to maintain a natural, flowing conversation. You MUST adhere to the
 
 1. NO META-INSTRUCTIONS: NEVER break character to discuss the sign language interface itself. NEVER instruct the user on how to perform physical signs (e.g., absolutely do not say "Can you do the NEED sign", "Point your finger", or "Make a gesture"). Treat the user's input as if they simply typed or spoke it to you.
 2. NATURAL RESPONSES: Respond directly to the meaning and intent of the user's message like a real human assistant would. If they say "I need to go to the hospital", respond with urgency and care (e.g., "I understand. Is it an emergency? Do you need me to call an ambulance?").
-3. LIMITED VOCABULARY AWARENESS: The user is communicating using a very constrained and limited sign language vocabulary of 34 basic words/concepts: ASK, BAD, BECOME, CHAT, FIND, FINISH, GOOD, HELLO, HELP, HOSPITAL, KNOW, LAUGH, LIKE, MAKE, ME, MORE, NEED, NO, PLAY, PLEASE, READ, SHOW, START, TELL, THINK, TO, UNDERSTAND, WANT, WHERE, WHO, WHY, WRITE, YES, YOU.
+3. LIMITED VOCABULARY AWARENESS: The user is communicating using a very constrained and limited sign language vocabulary of 29 basic words/concepts: BAD, BECOME, FIND, FINISH, GOOD, HELLO, HELP, HOSPITAL, KNOW, LAUGH, LIKE, MAKE, ME, MORE, NEED, NO, PLAY, PLEASE, READ, SHOW, START, TELL, THINK, WANT, WHERE, WHO, WHY, YES, YOU.
 4. GUIDE THE CONVERSATION: To help the user continue the conversation easily, ALWAYS end your response with a single, highly simplified follow-up question. Formulate your questions so they can be answered with basic concepts (Yes/No, basic needs, or simple actions). Avoid complex open-ended questions.
 
 Act as a true conversational partner, focusing entirely on the context of the chat, not the medium of communication."""
