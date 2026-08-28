@@ -36,9 +36,9 @@ app.add_middleware(
 
 # 1. Configuración de Parámetros Globales
 ROOT_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(ROOT_DIR, "models", "best_bilstm_model-6.pth")
-DATA_CLASSES_DIR  = os.path.join(ROOT_DIR, "data", "ASL_34_Classes")
-DATA_FLAT_DIR     = os.path.join(ROOT_DIR, "data", "ASL_34_Flat_Videos")
+MODEL_PATH = os.path.join(ROOT_DIR, "models", "best_bilstm_model-7.pth")
+DATA_CLASSES_DIR  = os.path.join(ROOT_DIR, "data", "ASL_29_Classes")
+DATA_FLAT_DIR     = os.path.join(ROOT_DIR, "data", "ASL_29_Flat_Videos")
 CLASSES = [
     "BAD", "BECOME", "FIND", "FINISH", "GOOD", "HELLO", "HELP", "HOSPITAL",
     "KNOW", "LAUGH", "LIKE", "MAKE", "ME", "MORE", "NEED", "NO",
