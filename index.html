@@ -1048,8 +1048,7 @@
     clearBtn.onclick = () => { sentence = []; streak = 0; streakBadgeEl.classList.remove("visible"); renderSentence(); };
 
     // ── Camera ──
-    startBtn.onclick = async () => {
-      setStatus("Cargando modelo visual...");
+    async function startCamera() {
       try {
         stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 }, audio: false });
         preview.srcObject = stream;
@@ -1060,7 +1059,31 @@
       } catch (e) {
         setStatus("Error al acceder a la cámara: " + e.message);
       }
+    }
+
+    startBtn.onclick = async () => {
+      setStatus("Cargando modelo visual...");
+      await startCamera();
     };
+
+    document.addEventListener("visibilitychange", async () => {
+      if (document.visibilityState === "visible" && startBtn.disabled) {
+        // La cámara estaba activa antes de cambiar de pestaña — reconectar
+        const wasRecording = mediaRecorder && mediaRecorder.state === "recording";
+        if (wasRecording) {
+          mediaRecorder.stop();
+          streak = 0;
+          streakBadgeEl.classList.remove("visible");
+        }
+        isDrawing = false;
+        if (stream) stream.getTracks().forEach(t => t.stop());
+        recordBtn.disabled = true;
+        stopBtn.disabled   = true;
+        hideResult();
+        setStatus("Reconectando cámara...");
+        await startCamera();
+      }
+    });
 
     recordBtn.onclick = () => {
       recordedChunks = [];
