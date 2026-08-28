@@ -15,7 +15,29 @@ from tqdm import tqdm
 import mediapipe as mp
 
 SEQUENCE_LENGTH = 30
-FEATURE_DIM = 225  # 33*3 pose + 21*3 left hand + 21*3 right hand
+FEATURE_DIM = 255  # 33*3 pose + 21*3 left_hand + 21*3 right_hand + 15 left_angles + 15 right_angles
+
+# Triplets (A, B, C) donde B es el vértice del ángulo — 3 articulaciones por dedo × 5 dedos
+_ANGLE_TRIPLETS = [
+    (0, 1, 2), (1, 2, 3), (2, 3, 4),       # Pulgar
+    (0, 5, 6), (5, 6, 7), (6, 7, 8),       # Índice
+    (0, 9, 10), (9, 10, 11), (10, 11, 12), # Medio
+    (0, 13, 14), (13, 14, 15), (14, 15, 16),# Anular
+    (0, 17, 18), (17, 18, 19), (18, 19, 20),# Meñique
+]
+
+def compute_hand_angles(landmarks_flat: np.ndarray) -> np.ndarray:
+    """Recibe landmarks aplanados (63,) y devuelve 15 ángulos articulares en radianes."""
+    if np.all(landmarks_flat == 0):
+        return np.zeros(15, dtype=np.float32)
+    pts = landmarks_flat.reshape(21, 3)
+    angles = []
+    for a, b, c in _ANGLE_TRIPLETS:
+        v1 = pts[a] - pts[b]
+        v2 = pts[c] - pts[b]
+        cos_a = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-8)
+        angles.append(np.arccos(np.clip(cos_a, -1.0, 1.0)))
+    return np.array(angles, dtype=np.float32)
 
 # URLs de modelos para la Tasks API (mediapipe >= 0.10.x y 1.x)
 _POSE_MODEL_URL = (
@@ -151,7 +173,9 @@ class MediaPipeExtractor:
         except Exception:
             pass
 
-        return np.concatenate([pose, left_hand, right_hand]).astype(np.float32)
+        left_angles  = compute_hand_angles(left_hand)
+        right_angles = compute_hand_angles(right_hand)
+        return np.concatenate([pose, left_hand, right_hand, left_angles, right_angles]).astype(np.float32)
 
     def extract_features(self, video_frames: List[np.ndarray]) -> np.ndarray:
         features = [self.extract_frame_features(frame) for frame in video_frames]

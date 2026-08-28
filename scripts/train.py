@@ -49,7 +49,7 @@ def train_model(
 
     # 3. Inicializar Modelo dinámico
     print(f"🧠 Inicializando Modelo BiLSTM para {num_classes} clases...")
-    model = BiLSTMSignModel(input_dim=225, hidden_dim=128, num_classes=num_classes) # <-- Dinámico
+    model = BiLSTMSignModel(input_dim=255, hidden_dim=128, num_classes=num_classes)
     model = model.to(device)
 
     criterion = nn.CrossEntropyLoss()

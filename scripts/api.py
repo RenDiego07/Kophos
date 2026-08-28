@@ -46,7 +46,27 @@ CLASSES = [
     "WHERE", "WHO", "WHY", "YES", "YOU"
 ]
 SEQUENCE_LENGTH = 30
-FEATURE_DIM = 225
+FEATURE_DIM = 255  # 33*3 pose + 21*3 left_hand + 21*3 right_hand + 15 left_angles + 15 right_angles
+
+_ANGLE_TRIPLETS = [
+    (0, 1, 2), (1, 2, 3), (2, 3, 4),
+    (0, 5, 6), (5, 6, 7), (6, 7, 8),
+    (0, 9, 10), (9, 10, 11), (10, 11, 12),
+    (0, 13, 14), (13, 14, 15), (14, 15, 16),
+    (0, 17, 18), (17, 18, 19), (18, 19, 20),
+]
+
+def compute_hand_angles(landmarks_flat: np.ndarray) -> np.ndarray:
+    if np.all(landmarks_flat == 0):
+        return np.zeros(15, dtype=np.float32)
+    pts = landmarks_flat.reshape(21, 3)
+    angles = []
+    for a, b, c in _ANGLE_TRIPLETS:
+        v1 = pts[a] - pts[b]
+        v2 = pts[c] - pts[b]
+        cos_a = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-8)
+        angles.append(np.arccos(np.clip(cos_a, -1.0, 1.0)))
+    return np.array(angles, dtype=np.float32)
 
 # 2. Inicializar Modelo BiLSTM
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -86,6 +106,7 @@ class ChatRequest(BaseModel):
 
 class ReformulateRequest(BaseModel):
     words: list[str]
+    context: list[ChatMessage] = []
 
 @app.post("/reformulate/")
 async def reformulate(req: ReformulateRequest):
@@ -93,18 +114,27 @@ async def reformulate(req: ReformulateRequest):
         return JSONResponse(status_code=400, content={"error": "No hay palabras."})
 
     raw = " ".join(req.words)
+
+    context_block = ""
+    if req.context:
+        recent = req.context[-6:]  # últimos 6 turnos para no saturar el prompt
+        lines = "\n".join(f"{m.role.upper()}: {m.content}" for m in recent)
+        context_block = f"\n\nContexto de la conversación reciente:\n{lines}\n"
+
+    system_content = (
+        "Eres un reformulador de frases para una app de lenguaje de señas. "
+        "El usuario te enviará palabras sueltas detectadas por el sistema (en inglés, en mayúsculas). "
+        "Tu tarea es convertirlas en una oración natural y gramaticalmente correcta en español, "
+        "tomando en cuenta el contexto de la conversación si se proporciona. "
+        "Si hay contexto, interpreta las palabras como una respuesta o continuación coherente de esa conversación. "
+        "Responde ÚNICAMENTE con la oración reformulada, sin explicaciones ni texto adicional."
+        + context_block
+    )
+
     completion = llm_client.chat.completions.create(
         model=LLM_MODEL,
         messages=[
-            {
-                "role": "system",
-                "content": (
-                    "Eres un reformulador de frases para una app de lenguaje de señas mexicano (LSM). "
-                    "El usuario te enviará palabras sueltas detectadas por el sistema (en inglés, en mayúsculas). "
-                    "Tu tarea es convertirlas en una oración natural y gramaticalmente correcta en español. "
-                    "Responde ÚNICAMENTE con la oración reformulada, sin explicaciones ni texto adicional."
-                ),
-            },
+            {"role": "system", "content": system_content},
             {"role": "user", "content": raw},
         ],
     )
@@ -142,7 +172,9 @@ def extract_features(results):
     if results.right_hand_landmarks:
         right_hand = np.array([[lm.x, lm.y, lm.z] for lm in results.right_hand_landmarks.landmark]).flatten()
 
-    return np.concatenate([pose, left_hand, right_hand]).astype(np.float32)
+    left_angles  = compute_hand_angles(left_hand)
+    right_angles = compute_hand_angles(right_hand)
+    return np.concatenate([pose, left_hand, right_hand, left_angles, right_angles]).astype(np.float32)
 
 def adjust_sequence_length(frames, target_length=30):
     """Fuerza la secuencia a tener exactamente 30 frames."""
